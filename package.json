@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "wedding-website",
+  "description": "My wedding website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "nicmosc <nmoscholios@gmail.com>",
   "dependencies": {
     "gatsby": "^2.17.10",
     "gatsby-image": "^2.2.30",
@@ -21,23 +20,11 @@
   "devDependencies": {
     "prettier": "^1.19.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "serve": "gatsby serve"
   }
 }
