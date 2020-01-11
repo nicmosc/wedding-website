@@ -18,6 +18,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
   "license": "MIT",
@@ -25,6 +26,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "npm run build && gh-pages -d public"
   }
 }
