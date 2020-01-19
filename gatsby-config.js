@@ -6,6 +6,8 @@ module.exports = {
   },
   pathPrefix: '/wedding-website',
   plugins: [
+    `gatsby-plugin-transition-link`,
+    'gatsby-plugin-eslint',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -16,7 +18,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
