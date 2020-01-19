@@ -54,7 +54,7 @@ const IndexPage = () => {
           Go to page 2
         </Link>
         <br />
-        <AniLink cover to="/page-2" direction="right" bg="#ff0000">
+        <AniLink cover to="/page-3" direction="right" bg="#ff0000">
           Go to page 2 with a cover right
         </AniLink>
         <TransitionPortal>
