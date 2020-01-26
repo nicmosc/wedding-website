@@ -13,7 +13,7 @@ const ScrollPage = () => {
         <FullpageSection
           style={{
             backgroundColor: 'lime',
-            height: '80vh',
+            height: '100vh',
             padding: '1em',
           }}>
           1
@@ -21,6 +21,7 @@ const ScrollPage = () => {
         <FullpageSection
           style={{
             backgroundColor: 'coral',
+            height: '200vh',
             padding: '1em',
           }}>
           2
@@ -28,6 +29,7 @@ const ScrollPage = () => {
         <FullpageSection
           style={{
             backgroundColor: 'firebrick',
+            height: '40vh',
             padding: '1em',
           }}>
           3
