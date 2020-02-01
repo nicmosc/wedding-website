@@ -4,10 +4,13 @@ import React from 'react';
 
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
+import leftFlower from '../images/intro-left-flower.png';
+import rightFlower from '../images/intro-right-flower.png';
 import sv from '../utils/vars';
 
 const styles = {
   intro: css`
+    position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -19,6 +22,37 @@ const styles = {
     justify-content: center;
     flex-direction: column;
   `,
+  rightFlower: css`
+    position: absolute;
+    right: calc(${sv.marginLarge} * -2);
+    bottom: 0;
+    z-index: 99;
+    height: 70vh;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+
+    > img {
+      height: 100%;
+      object-fit: contain;
+      transform: scaleX(-1);
+    }
+  `,
+  leftFlower: css`
+    position: absolute;
+    top: calc(${sv.marginLarge} * -2);
+    left: calc(${sv.marginLarge} * -1);
+    z-index: 99;
+    height: 60vh;
+    display: flex;
+    justify-content: flex-start;
+    pointer-events: none;
+
+    > img {
+      height: 100%;
+      object-fit: contain;
+    }
+  `,
 };
 
 const Index = () => {
@@ -27,9 +61,15 @@ const Index = () => {
       <FullPageSections>
         <FullpageSection style={{ height: '100vh' }}>
           <div className={styles.intro}>
+            <div className={styles.leftFlower}>
+              <img src={leftFlower} />
+            </div>
             <div className={styles.title}>
               <Title>Jemima & Nicolaos</Title>
               <Subtitle>Are getting married</Subtitle>
+            </div>
+            <div className={styles.rightFlower}>
+              <img src={rightFlower} />
             </div>
           </div>
         </FullpageSection>
