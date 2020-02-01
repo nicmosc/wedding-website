@@ -1,5 +1,6 @@
+import { FullpageContext } from '@ap.cx/react-fullpage';
 import { css, keyframes } from 'emotion';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import sv from '../utils/vars';
 import Subtitle from './Subtitle';
@@ -46,8 +47,11 @@ const styles = {
 };
 
 const NextSectionTrigger = ({ children }) => {
+  const value = useContext(FullpageContext);
+  const { goto, slides, number } = value;
+
   return (
-    <div className={styles.container}>
+    <div onClick={() => goto(slides[number + 1])} className={styles.container}>
       <div data-element="line" className={styles.line} />
       <div data-element="label">
         <Subtitle>{children}</Subtitle>

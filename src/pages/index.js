@@ -10,7 +10,6 @@ const styles = {
   pageWrapper: css`
     position: relative;
   `,
-
   menu: css`
     position: fixed;
     top: ${sv.marginLarge};
