@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
 // import { Link } from "gatsby"
 import Link, { TransitionPortal } from 'gatsby-plugin-transition-link';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import { TimelineMax, Power1 } from 'gsap';
+import { Power1, TimelineMax } from 'gsap';
+import React, { useRef } from 'react';
 
-import Layout from '../components/layout';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Image from '../components/image';
+import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const IndexPage = () => {
