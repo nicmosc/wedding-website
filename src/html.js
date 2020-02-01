@@ -18,8 +18,6 @@ const styles = css`
   html,
   body {
     background: ${sv.backgroundColor};
-    margin: 0;
-    box-sizing: content-box;
     font-size: ${sv.defaultFontSize};
     line-height: ${sv.defaultLineHeight};
     letter-spacing: ${sv.defaultLetterSpacing};

@@ -4,7 +4,7 @@ const defaultLetterSpacing = '1.8px';
 const defaultFontFamily = 'Poppins';
 const altFontFamily = 'Merlin';
 
-const backgroundColor = 'linear-gradient(to right, #FFFCFC, #FCF1F1)';
+const backgroundColor = 'linear-gradient(to right, #FFFCFC, #ffe9e9)';
 const neutral = '#4F4549';
 const neutralLight = '#9D9498';
 
@@ -21,6 +21,14 @@ const brownDark = '#A99180';
 const red = '#FF8585';
 
 const blue = '#B9D9FF';
+
+const margin = '20px';
+const marginSmall = '10px';
+const marginLarge = '30px';
+
+const padding = margin;
+const paddingSmall = marginSmall;
+const paddingLarge = marginLarge;
 
 export default {
   altFontFamily,
@@ -39,4 +47,10 @@ export default {
   brownDark,
   red,
   blue,
+  margin,
+  marginSmall,
+  marginLarge,
+  padding,
+  paddingSmall,
+  paddingLarge,
 };
