@@ -1,10 +1,5 @@
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage';
 import React from 'react';
-import Fullpage, {
-  FullPageSections,
-  FullpageSection,
-  FullpageCount,
-  FullpageNavigation,
-} from '@ap.cx/react-fullpage';
 
 const ScrollPage = () => {
   return (

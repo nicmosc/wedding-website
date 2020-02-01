@@ -1,5 +1,39 @@
-import React from 'react';
+import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import sv from './utils/vars';
+
+const styles = css`
+  @import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+
+  @font-face {
+    font-family: Merlin;
+    font-weight: 400;
+    font-style: normal;
+    src: url('Merlin.ttf') format('ttf');
+    font-display: swap;
+  }
+
+  html,
+  body {
+    background: ${sv.backgroundColor};
+    font-size: ${sv.defaultFontSize};
+    line-height: ${sv.defaultLineHeight};
+    letter-spacing: ${sv.defaultLetterSpacing};
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  * {
+    font-family: ${sv.defaultFontFamily};
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
 
 export default function HTML(props) {
   return (
@@ -32,6 +66,7 @@ export default function HTML(props) {
           }}>
           <h1>Loading...</h1>
         </div>
+        <Global styles={styles} />
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>
