@@ -2,6 +2,7 @@ import FullPage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpa
 import { css } from 'emotion';
 import React from 'react';
 
+import BurgerMenu from '../components/BurgerMenu';
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
 import leftFlower from '../images/intro-left-flower.png';
@@ -9,6 +10,9 @@ import rightFlower from '../images/intro-right-flower.png';
 import sv from '../utils/vars';
 
 const styles = {
+  pageWrapper: css`
+    position: relative;
+  `,
   intro: css`
     position: relative;
     height: 100%;
@@ -53,32 +57,43 @@ const styles = {
       object-fit: contain;
     }
   `,
+  menu: css`
+    position: fixed;
+    top: ${sv.marginLarge};
+    right: ${sv.marginLarge};
+    z-index: 9;
+  `,
 };
 
 const Index = () => {
   return (
-    <FullPage>
-      <FullPageSections>
-        <FullpageSection style={{ height: '100vh' }}>
-          <div className={styles.intro}>
-            <div className={styles.leftFlower}>
-              <img src={leftFlower} />
+    <div className={styles.pageWrapper}>
+      <div className={styles.menu}>
+        <BurgerMenu />
+      </div>
+      <FullPage>
+        <FullPageSections>
+          <FullpageSection style={{ height: '100vh' }}>
+            <div className={styles.intro}>
+              <div className={styles.leftFlower}>
+                <img src={leftFlower} />
+              </div>
+              <div className={styles.title}>
+                <Title>Jemima & Nicolaos</Title>
+                <Subtitle>Are getting married</Subtitle>
+              </div>
+              <div className={styles.rightFlower}>
+                <img src={rightFlower} />
+              </div>
             </div>
-            <div className={styles.title}>
-              <Title>Jemima & Nicolaos</Title>
-              <Subtitle>Are getting married</Subtitle>
-            </div>
-            <div className={styles.rightFlower}>
-              <img src={rightFlower} />
-            </div>
-          </div>
-        </FullpageSection>
-        <FullpageSection style={{ height: '100vh' }}>Countdown</FullpageSection>
-        <FullpageSection style={{ height: '100vh' }}>Location</FullpageSection>
-        <FullpageSection style={{ height: '50vh' }}>People</FullpageSection>
-        <FullpageSection style={{ height: '40vh' }}>Footer</FullpageSection>
-      </FullPageSections>
-    </FullPage>
+          </FullpageSection>
+          <FullpageSection style={{ height: '100vh' }}>Countdown</FullpageSection>
+          <FullpageSection style={{ height: '100vh' }}>Location</FullpageSection>
+          <FullpageSection style={{ height: '50vh' }}>People</FullpageSection>
+          <FullpageSection style={{ height: '40vh' }}>Footer</FullpageSection>
+        </FullPageSections>
+      </FullPage>
+    </div>
   );
 };
 

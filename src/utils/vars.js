@@ -30,6 +30,8 @@ const padding = margin;
 const paddingSmall = marginSmall;
 const paddingLarge = marginLarge;
 
+const transition = 'all 0.2s ease-in-out';
+
 export default {
   altFontFamily,
   defaultFontSize,
@@ -53,4 +55,5 @@ export default {
   padding,
   paddingSmall,
   paddingLarge,
+  transition,
 };
