@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import React from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
+import NextSectionTrigger from '../components/NextSectionTrigger';
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
 import leftFlower from '../images/intro-left-flower.png';
@@ -63,6 +64,12 @@ const styles = {
     right: ${sv.marginLarge};
     z-index: 9;
   `,
+  nextSection: css`
+    position: absolute;
+    bottom: ${sv.marginLarge};
+    left: 20%;
+    z-index: 999;
+  `,
 };
 
 const Index = () => {
@@ -84,6 +91,9 @@ const Index = () => {
               </div>
               <div className={styles.rightFlower}>
                 <img src={rightFlower} />
+              </div>
+              <div className={styles.nextSection}>
+                <NextSectionTrigger>When?</NextSectionTrigger>
               </div>
             </div>
           </FullpageSection>
