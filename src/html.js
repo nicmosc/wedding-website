@@ -5,7 +5,7 @@ import React from 'react';
 import sv from './utils/vars';
 
 const styles = css`
-  @import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap');
 
   @font-face {
     font-family: Merlin;
@@ -27,6 +27,7 @@ const styles = css`
 
   * {
     font-family: ${sv.defaultFontFamily};
+    font-weight: 500;
   }
 
   a {

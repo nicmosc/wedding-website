@@ -8,7 +8,6 @@ const styles = {
     font-family: ${sv.defaultFontFamily};
     font-size: 1em;
     color: ${sv.neutralLight};
-    font-weight: 300;
     text-transform: uppercase;
     margin: ${sv.marginSmall} 0;
   `,

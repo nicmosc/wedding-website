@@ -4,7 +4,7 @@ import React from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
-import { Intro } from '../components/HomeSections';
+import { DateSection, Intro } from '../components/HomeSections';
 import sv from '../utils/vars';
 
 const styles = {
@@ -41,7 +41,9 @@ const Index = () => {
           <FullpageSection style={{ height: '100vh' }}>
             <Intro />
           </FullpageSection>
-          <FullpageSection style={{ height: '100vh' }}>Countdown</FullpageSection>
+          <FullpageSection style={{ height: '100vh' }}>
+            <DateSection />
+          </FullpageSection>
           <FullpageSection style={{ height: '100vh' }}>Location</FullpageSection>
           <FullpageSection style={{ height: '50vh' }}>People</FullpageSection>
           <FullpageSection style={{ height: '40vh' }}>Footer</FullpageSection>
