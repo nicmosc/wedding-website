@@ -38,7 +38,7 @@ const styles = {
     }
   `,
   line: css`
-    width: 2px;
+    width: 1px;
     height: 30px;
     background: ${sv.neutralLighter};
     transition: ${sv.transition};
