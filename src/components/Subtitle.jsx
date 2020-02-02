@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import React from 'react';
 
 import sv from '../utils/vars';
@@ -12,10 +12,20 @@ const styles = {
     text-transform: uppercase;
     margin: ${sv.marginSmall} 0;
   `,
+  noMargin: css`
+    margin: 0;
+  `,
 };
 
-const Subtitle = ({ children }) => {
-  return <div className={styles.subtitle}>{children}</div>;
+const Subtitle = ({ children, noMargin }) => {
+  return (
+    <div
+      className={cx(styles.subtitle, {
+        [styles.noMargin]: noMargin,
+      })}>
+      {children}
+    </div>
+  );
 };
 
 export default Subtitle;

@@ -3,6 +3,7 @@ import { css } from 'emotion';
 import React from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
+import FloatingDate from '../components/FloatingDate';
 import { Intro } from '../components/HomeSections';
 import sv from '../utils/vars';
 
@@ -16,6 +17,14 @@ const styles = {
     right: ${sv.marginLarge};
     z-index: 9;
   `,
+  date: css`
+    position: fixed;
+    bottom: ${sv.marginLarge};
+    left: ${sv.marginLarge};
+    transform-origin: left;
+    transform: rotateZ(-90deg) translateY(50%);
+    z-index: 9;
+  `,
 };
 
 const Index = () => {
@@ -23,6 +32,9 @@ const Index = () => {
     <div className={styles.pageWrapper}>
       <div className={styles.menu}>
         <BurgerMenu />
+      </div>
+      <div className={styles.date}>
+        <FloatingDate />
       </div>
       <FullPage>
         <FullPageSections>
