@@ -33,7 +33,7 @@ const styles = {
     position: absolute;
     top: calc(${sv.marginLarge} * -2);
     right: calc(${sv.marginLarge} * -1);
-    width: 300px;
+    width: 400px;
     pointer-events: none;
   `,
 };
