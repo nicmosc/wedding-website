@@ -1,6 +1,7 @@
 import { css } from 'emotion';
-import React from 'react';
+import React, { useState } from 'react';
 
+import { useInterval } from '../utils';
 import sv from '../utils/vars';
 
 const styles = {
@@ -30,7 +31,7 @@ const styles = {
   `,
 };
 
-const WEDDING_DATE = '2020-07-11';
+const WEDDING_DATE = new Date('2020-07-11 14:00');
 
 const Item = ({ time, label }) => {
   return (
@@ -42,15 +43,28 @@ const Item = ({ time, label }) => {
 };
 
 const Countdown = () => {
+  const [difference, setDifference] = useState(+WEDDING_DATE - +new Date());
+
+  useInterval(() => {
+    setDifference(+WEDDING_DATE - +new Date());
+  }, 1000);
+
+  const parts = {
+    days: Math.abs(Math.floor(difference / (1000 * 60 * 60 * 24))),
+    hours: Math.abs(Math.floor((difference / (1000 * 60 * 60)) % 24)),
+    minutes: Math.abs(Math.floor((difference / 1000 / 60) % 60)),
+    seconds: Math.abs(Math.floor((difference / 1000) % 60)),
+  };
+
   return (
     <div className={styles.countdown}>
-      <Item time="100" label="days" />
+      <Item time={parts.days} label="days" />
       <div className={styles.bigLabel}>:</div>
-      <Item time="03" label="hours" />
+      <Item time={parts.hours} label="hours" />
       <div className={styles.bigLabel}>:</div>
-      <Item time="15" label="minutes" />
+      <Item time={parts.minutes} label="minutes" />
       <div className={styles.bigLabel}>:</div>
-      <Item time="13" label="secs" />
+      <Item time={parts.seconds} label="secs" />
     </div>
   );
 };

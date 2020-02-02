@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import React from 'react';
 
 import flower from '../../images/countdown-flower.png';
@@ -37,6 +37,10 @@ const styles = {
   `,
   countdown: css`
     margin-top: calc(${sv.marginLarge} * 3);
+    position: relative;
+  `,
+  smallMargin: css`
+    margin-top: ${sv.marginLarge};
   `,
   nextSection: css`
     position: absolute;
@@ -44,12 +48,25 @@ const styles = {
     left: 50%;
     transform: translateX(-50%);
   `,
+  alreadyMarried: css`
+    text-align: center;
+    margin-bottom: calc(${sv.marginLarge} * 2);
+  `,
 };
 
+const WEDDING_DATE = new Date('2020-07-11');
+
 const DateSection = () => {
+  const alreadyMarried = WEDDING_DATE < new Date();
   return (
     <div className={styles.dateSection}>
-      <Subtitle>The wedding will be held on</Subtitle>
+      {do {
+        if (alreadyMarried) {
+          <Subtitle>The wedding was held on</Subtitle>;
+        } else {
+          <Subtitle>The wedding will be held on</Subtitle>;
+        }
+      }}
       <div className={styles.title}>July 11, 2020</div>
       <div className={styles.group}>
         <img className={styles.flower} src={flower} />
@@ -58,7 +75,14 @@ const DateSection = () => {
         </div>
         <div className={styles.title}>2 PM</div>
       </div>
-      <div className={styles.countdown}>
+      <div className={cx(styles.countdown, { [styles.smallMargin]: alreadyMarried })}>
+        {do {
+          if (alreadyMarried) {
+            <div className={styles.alreadyMarried}>
+              <Subtitle>Married since</Subtitle>
+            </div>;
+          }
+        }}
         <Countdown />
       </div>
       <div className={styles.nextSection}>
