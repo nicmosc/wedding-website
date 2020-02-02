@@ -5,6 +5,7 @@
   "author": "nicmosc <nmoscholios@gmail.com>",
   "dependencies": {
     "@ap.cx/react-fullpage": "^0.1.10",
+    "@drawbotics/icons": "^5.1.0",
     "@emotion/core": "^10.0.27",
     "emotion": "^10.0.27",
     "gatsby": "^2.19.10",
@@ -25,6 +26,9 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "babel-preset-gatsby": "^0.2.27",
     "eslint-config-react-app": "^5.1.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "gh-pages": "^2.2.0",

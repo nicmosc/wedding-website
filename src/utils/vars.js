@@ -7,6 +7,7 @@ const altFontFamily = 'Merlin';
 const backgroundColor = 'linear-gradient(to right, #FFFCFC, #ffe9e9)';
 const neutral = '#4F4549';
 const neutralLight = '#9D9498';
+const neutralLighter = '#bfb3b8';
 
 const pink = '#FDD8E7';
 const pinkDark = '#F8B1CD';
@@ -29,6 +30,10 @@ const marginLarge = '30px';
 const padding = margin;
 const paddingSmall = marginSmall;
 const paddingLarge = marginLarge;
+
+const transitionTime = '0.2s';
+
+const transition = 'all 0.2s ease-in-out';
 
 export default {
   altFontFamily,
@@ -53,4 +58,7 @@ export default {
   padding,
   paddingSmall,
   paddingLarge,
+  transition,
+  transitionTime,
+  neutralLighter,
 };

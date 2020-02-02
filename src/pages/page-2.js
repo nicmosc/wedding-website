@@ -1,9 +1,9 @@
-import React from 'react';
 // import { Link } from "gatsby"
 import Link from 'gatsby-plugin-transition-link';
+import React from 'react';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from '../components/_old/layout';
+import SEO from '../components/_old/seo';
 
 const SecondPage = () => (
   <Layout>

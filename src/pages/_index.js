@@ -1,12 +1,12 @@
 // import { Link } from "gatsby"
 import Link, { TransitionPortal } from 'gatsby-plugin-transition-link';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { Power1, TimelineMax } from 'gsap';
 import React, { useRef } from 'react';
 
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import Image from '../components/image';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Image from '../components/_old/image';
+import Layout from '../components/_old/layout';
+import SEO from '../components/_old/seo';
 
 const IndexPage = () => {
   const transitionCover = useRef();
