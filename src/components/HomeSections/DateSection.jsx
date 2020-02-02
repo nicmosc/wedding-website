@@ -9,12 +9,12 @@ import Subtitle from '../Subtitle';
 
 const styles = {
   dateSection: css`
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 100%;
   `,
   title: css`
     font-size: 3em;

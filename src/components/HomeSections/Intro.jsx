@@ -10,8 +10,8 @@ import Title from '../Title';
 
 const styles = {
   intro: css`
+    flex: 1;
     position: relative;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
