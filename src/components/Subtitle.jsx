@@ -16,9 +16,10 @@ const styles = {
   `,
 };
 
-const Subtitle = ({ children, noMargin }) => {
+const Subtitle = ({ children, noMargin, style }) => {
   return (
     <div
+      style={style}
       className={cx(styles.subtitle, {
         [styles.noMargin]: noMargin,
       })}>
