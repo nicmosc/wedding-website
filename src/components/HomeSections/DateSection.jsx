@@ -15,6 +15,7 @@ const styles = {
     justify-content: center;
     align-items: center;
     position: relative;
+    min-height: 100vh;
   `,
   title: css`
     font-size: 3em;

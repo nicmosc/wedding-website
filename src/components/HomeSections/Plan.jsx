@@ -15,6 +15,7 @@ const styles = {
     justify-content: center;
     align-items: center;
     position: relative;
+    min-height: 100vh;
   `,
   timeline: css`
     margin-top: calc(${sv.margin} * 2);

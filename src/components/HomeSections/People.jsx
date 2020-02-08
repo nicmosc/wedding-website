@@ -16,6 +16,7 @@ const styles = {
     position: relative;
     padding-top: calc(${sv.paddingLarge} * 3);
     flex: 1;
+    min-height: 100vh;
   `,
   row: css`
     display: flex;

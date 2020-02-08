@@ -16,6 +16,7 @@ const styles = {
     align-items: center;
     position: relative;
     padding-top: calc(${sv.paddingLarge} * 3);
+    ${'' /* min-height: 100vh; */}
   `,
   map: css`
     height: 40vh;

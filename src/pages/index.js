@@ -1,4 +1,7 @@
+import 'fullpage.js/vendors/scrolloverflow'; // Optional. When using scrollOverflow:true
+
 import FullPage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage';
+import ReactFullpage from '@fullpage/react-fullpage';
 import { css } from 'emotion';
 import React from 'react';
 
@@ -25,7 +28,14 @@ const styles = {
     transform: rotateZ(-90deg) translateY(50%);
     z-index: 9;
   `,
+  flexSection: css`
+    .fp-tableCell {
+      display: flex;
+    }
+  `,
 };
+
+const anchors = ['intro', 'date', 'location', 'timeline', 'people'];
 
 const Index = () => {
   return (
@@ -36,26 +46,30 @@ const Index = () => {
       <div className={styles.date}>
         <FloatingDate />
       </div>
-      <FullPage>
-        <FullPageSections>
-          <FullpageSection style={{ height: '100vh', display: 'flex' }}>
-            <Intro />
-          </FullpageSection>
-          <FullpageSection style={{ height: '100vh', display: 'flex' }}>
-            <DateSection />
-          </FullpageSection>
-          <FullpageSection style={{ height: '100vh', display: 'flex' }}>
-            <Location />
-          </FullpageSection>
-          <FullpageSection style={{ height: '100vh', display: 'flex' }}>
-            <Plan />
-          </FullpageSection>
-          <FullpageSection style={{ height: '100vh', display: 'flex' }}>
-            <People />
-          </FullpageSection>
-          <FullpageSection style={{ height: '40vh' }}>Footer</FullpageSection>
-        </FullPageSections>
-      </FullPage>
+      <ReactFullpage
+        scrollOverflow
+        licenseKey="ok"
+        anchors={anchors}
+        render={() => (
+          <ReactFullpage.Wrapper>
+            <div className="section fp-noscroll">
+              <Intro />
+            </div>
+            <div className="section fp-noscroll">
+              <DateSection />
+            </div>
+            <div className={`section fp-noscroll ${styles.flexSection}`}>
+              <Location />
+            </div>
+            <div className="section fp-noscroll">
+              <Plan />
+            </div>
+            <div className="section">
+              <People />
+            </div>
+          </ReactFullpage.Wrapper>
+        )}
+      />
     </div>
   );
 };
