@@ -1,6 +1,6 @@
 {
   ".js, .jsx": {
-    "parser": "typescript",
+    "parser": "babylon",
     "style": "module"
   }
 }
