@@ -34,7 +34,10 @@ const styles = {
 
 const anchors = ['intro', 'date', 'location', 'timeline', 'people'];
 
-const ReactFullpage = loadable(() => import('@fullpage/react-fullpage'));
+const ReactFullpage =
+  process.env.NODE_ENV === 'development'
+    ? require('@fullpage/react-fullpage').default
+    : loadable(() => import('@fullpage/react-fullpage'));
 
 const Index = () => {
   return (

@@ -133,12 +133,7 @@ const People = () => {
           title="Amina"
           label="Bridesmaid"
         />
-        <Person
-          background={flowerBackground}
-          image={placeholder}
-          title="Prajith"
-          label="Groomsman"
-        />
+        <Person background={flowerBackground} image={placeholder} title="Praj" label="Groomsman" />
       </div>
     </div>
   );
