@@ -9,5 +9,5 @@ require('normalize.css/normalize.css');
 exports.onInitialClientRender = () => {
   setTimeout(function() {
     document.getElementById('___loader').style.display = 'none';
-  }, 1000);
+  }, 2000);
 };

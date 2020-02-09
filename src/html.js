@@ -2,6 +2,7 @@ import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import merlin from './fonts/merlin.regular.ttf';
 import sv from './utils/vars';
 
 const styles = css`
@@ -11,8 +12,7 @@ const styles = css`
     font-family: Merlin;
     font-weight: 400;
     font-style: normal;
-    src: url('Merlin.ttf') format('ttf');
-    font-display: swap;
+    src: url(${merlin}) format('truetype');
   }
 
   html,
@@ -63,7 +63,7 @@ export default function HTML(props) {
             top: 0,
             right: 0,
             bottom: 0,
-            zIndex: 1,
+            zIndex: 9999,
           }}>
           <h1>Loading...</h1>
         </div>
