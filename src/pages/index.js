@@ -1,7 +1,4 @@
-import 'fullpage.js/vendors/scrolloverflow'; // Optional. When using scrollOverflow:true
-
-import FullPage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage';
-import ReactFullpage from '@fullpage/react-fullpage';
+import loadable from '@loadable/component';
 import { css } from 'emotion';
 import React from 'react';
 
@@ -36,6 +33,8 @@ const styles = {
 };
 
 const anchors = ['intro', 'date', 'location', 'timeline', 'people'];
+
+const ReactFullpage = loadable(() => import('@fullpage/react-fullpage'));
 
 const Index = () => {
   return (
