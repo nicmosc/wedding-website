@@ -3,3 +3,4 @@ export DateSection from './DateSection';
 export Location from './Location';
 export Plan from './Plan';
 export People from './People';
+export Footer from './Footer';

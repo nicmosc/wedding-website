@@ -18,7 +18,7 @@ const styles = {
     min-height: 100vh;
   `,
   timeline: css`
-    margin-top: calc(${sv.marginLarge} * 2);
+    margin-top: calc(${sv.marginLarge} * 4);
     display: flex;
     align-items: flex-start;
     position: relative;

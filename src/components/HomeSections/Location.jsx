@@ -16,7 +16,6 @@ const styles = {
     align-items: center;
     position: relative;
     padding-top: calc(${sv.paddingLarge} * 3);
-    ${'' /* min-height: 100vh; */}
   `,
   map: css`
     height: 40vh;
@@ -50,6 +49,7 @@ const Location = () => {
       <div className={styles.map}>
         <img src={flower} className={styles.flower} />
         <iframe
+          scrolling="no"
           src="https://snazzymaps.com/embed/210943"
           width="100%"
           height="100%"

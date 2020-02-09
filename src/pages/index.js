@@ -4,7 +4,7 @@ import React from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
-import { DateSection, Intro, Location, People, Plan } from '../components/HomeSections';
+import { DateSection, Footer, Intro, Location, People, Plan } from '../components/HomeSections';
 import sv from '../utils/vars';
 
 const styles = {
@@ -32,7 +32,7 @@ const styles = {
   `,
 };
 
-const anchors = ['intro', 'date', 'location', 'timeline', 'people'];
+const anchors = ['intro', 'date', 'location', 'timeline', 'people', 'footer'];
 
 const ReactFullpage =
   process.env.NODE_ENV === 'development'
@@ -68,6 +68,9 @@ const Index = () => {
             </div>
             <div className="section">
               <People />
+            </div>
+            <div className="section fp-auto-height">
+              <Footer />
             </div>
           </ReactFullpage.Wrapper>
         )}

@@ -45,9 +45,11 @@ const styles = {
   `,
 };
 
-const NextSectionTrigger = ({ children }) => {
+const NextSectionTrigger = ({ children, onClick }) => {
   return (
-    <div onClick={null} className={styles.container}>
+    <div
+      onClick={() => (onClick ? onClick() : window.fullpage_api.moveSectionDown())}
+      className={styles.container}>
       <div data-element="line" className={styles.line} />
       <div data-element="label">
         <Subtitle>{children}</Subtitle>

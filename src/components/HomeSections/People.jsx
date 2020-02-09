@@ -4,6 +4,7 @@ import React from 'react';
 import flowerBackground from '../../images/flower-background.png';
 import placeholder from '../../images/placeholder.png';
 import sv from '../../utils/vars';
+import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';
 
@@ -17,6 +18,7 @@ const styles = {
     padding-top: calc(${sv.paddingLarge} * 3);
     flex: 1;
     min-height: 100vh;
+    padding-bottom: calc(${sv.paddingLarge} * 6);
   `,
   row: css`
     display: flex;
@@ -71,6 +73,12 @@ const styles = {
     font-size: 4.5em;
     margin-bottom: ${sv.margin};
     margin-top: ${sv.marginLarge};
+  `,
+  nextSection: css`
+    position: absolute;
+    bottom: ${sv.margin};
+    left: 50%;
+    transform: translateX(-50%);
   `,
 };
 
@@ -134,6 +142,9 @@ const People = () => {
           label="Bridesmaid"
         />
         <Person background={flowerBackground} image={placeholder} title="Praj" label="Groomsman" />
+      </div>
+      <div className={styles.nextSection}>
+        <NextSectionTrigger>Anything else?</NextSectionTrigger>
       </div>
     </div>
   );
