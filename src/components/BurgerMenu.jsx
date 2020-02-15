@@ -16,9 +16,9 @@ const styles = {
   `,
 };
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ onClick }) => {
   return (
-    <div className={styles.menu}>
+    <div onClick={onClick} className={styles.menu}>
       <Icon name="menu" />
     </div>
   );

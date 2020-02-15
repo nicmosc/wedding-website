@@ -8,6 +8,7 @@ const backgroundColor = 'linear-gradient(to right, #FFFCFC, #ffe9e9)';
 const neutral = '#4F4549';
 const neutralLight = '#9D9498';
 const neutralLighter = '#bfb3b8';
+const white = '#ffffff';
 
 const pink = '#FDD8E7';
 const pinkDark = '#F8B1CD';
@@ -61,4 +62,5 @@ export default {
   transition,
   transitionTime,
   neutralLighter,
+  white,
 };
