@@ -4,7 +4,6 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { Power1, TimelineMax } from 'gsap';
 import React, { useRef } from 'react';
 
-import Image from '../components/_old/image';
 import Layout from '../components/_old/layout';
 import SEO from '../components/_old/seo';
 

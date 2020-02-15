@@ -52,6 +52,8 @@ const Index = () => {
         <FloatingDate />
       </div>
       <ReactFullpage
+        scrollingSpeed={1000}
+        easingcss3="ease-in-out"
         scrollOverflow
         licenseKey="ok"
         anchors={anchors}
