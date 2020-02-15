@@ -39,9 +39,7 @@ const IndexPage = () => {
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-          <Image />
-        </div>
+        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>{/* <Image /> */}</div>
         <Link
           exit={{
             length: 1.2,
@@ -54,7 +52,7 @@ const IndexPage = () => {
           Go to page 2
         </Link>
         <br />
-        <AniLink cover to="/page-3" direction="right" bg="#ff0000">
+        <AniLink cover to="/page-2" direction="right" bg="#ff0000">
           Go to page 2 with a cover right
         </AniLink>
         <TransitionPortal>

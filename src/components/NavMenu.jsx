@@ -1,4 +1,5 @@
 import { css, cx } from 'emotion';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -13,7 +14,7 @@ const styles = {
     width: 100vw;
     background: ${sv.white};
     display: none;
-    z-index: 99999;
+    z-index: 9;
     pointer-events: auto;
     overscroll-behavior: none;
     flex-direction: column;
@@ -76,8 +77,14 @@ const styles = {
   `,
 };
 
-const NavMenu = ({ visible }) => {
+const NavMenu = ({ visible, onClickClose }) => {
   const [outletElement, setOutletElement] = useState(null);
+
+  const handleClickClose = () => {
+    setTimeout(() => {
+      onClickClose();
+    }, 1000);
+  };
 
   useEffect(() => {
     if (!document.getElementById('modals-outlet')) {
@@ -114,9 +121,11 @@ const NavMenu = ({ visible }) => {
 
   return ReactDOM.createPortal(
     <div className={cx(styles.menu, { [styles.visible]: visible })}>
-      <div className={styles.item}>
-        <div className={styles.title}>Home</div>
-      </div>
+      <AniLink duration={2} cover to="/page-2" direction="right" bg={sv.pink}>
+        <div onClick={handleClickClose} className={styles.item}>
+          <div className={styles.title}>Home</div>
+        </div>
+      </AniLink>
       <div className={styles.item}>
         <div className={styles.title}>Registry</div>
       </div>
