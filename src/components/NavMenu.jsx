@@ -121,21 +121,27 @@ const NavMenu = ({ visible, onClickClose }) => {
 
   return ReactDOM.createPortal(
     <div className={cx(styles.menu, { [styles.visible]: visible })}>
-      <AniLink duration={2} cover to="/page-2" direction="right" bg={sv.pink}>
+      <AniLink duration={2} cover to="/" direction="right" bg={sv.pink}>
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Home</div>
         </div>
       </AniLink>
-      <div className={styles.item}>
-        <div className={styles.title}>Registry</div>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.title}>FAQ</div>
-      </div>
-      <div className={styles.item}>
-        <div className={styles.title}>Gallery</div>
-        <div className={styles.subtitle}>Coming soon</div>
-      </div>
+      <AniLink duration={2} cover to="/registry" direction="right" bg={sv.pink}>
+        <div onClick={handleClickClose} className={styles.item}>
+          <div className={styles.title}>Registry</div>
+        </div>
+      </AniLink>
+      <AniLink duration={2} cover to="/faq" direction="right" bg={sv.pink}>
+        <div onClick={handleClickClose} className={styles.item}>
+          <div className={styles.title}>Faq</div>
+        </div>
+      </AniLink>
+      <AniLink duration={2} cover to="/gallery" direction="right" bg={sv.pink}>
+        <div onClick={handleClickClose} className={styles.item}>
+          <div className={styles.title}>Gallery</div>
+          <div className={styles.subtitle}>Coming soon</div>
+        </div>
+      </AniLink>
     </div>,
     document.getElementById('modals-outlet'),
   );
