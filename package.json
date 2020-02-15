@@ -5,6 +5,7 @@
   "author": "nicmosc <nmoscholios@gmail.com>",
   "dependencies": {
     "@drawbotics/icons": "^5.1.0",
+    "@drawbotics/use-screen-size": "^2.0.0",
     "@emotion/core": "^10.0.27",
     "@fullpage/react-fullpage": "^0.1.17",
     "@loadable/component": "^5.12.0",

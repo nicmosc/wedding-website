@@ -5,6 +5,7 @@ import React from 'react';
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
 import { DateSection, Footer, Intro, Location, People, Plan } from '../components/HomeSections';
+import NavMenu from '../components/NavMenu';
 import sv from '../utils/vars';
 
 const styles = {
@@ -42,6 +43,7 @@ const ReactFullpage =
 const Index = () => {
   return (
     <div className={styles.pageWrapper}>
+      <NavMenu visible={true} />
       <div className={styles.menu}>
         <BurgerMenu />
       </div>
