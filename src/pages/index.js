@@ -1,6 +1,6 @@
 import loadable from '@loadable/component';
 import { css } from 'emotion';
-import React from 'react';
+import React, { useState } from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
@@ -41,11 +41,12 @@ const ReactFullpage =
     : loadable(() => import('@fullpage/react-fullpage'));
 
 const Index = () => {
+  const [menuVisible, setMenuVisible] = useState(false);
   return (
     <div className={styles.pageWrapper}>
-      <NavMenu visible={true} />
+      <NavMenu visible={menuVisible} />
       <div className={styles.menu}>
-        <BurgerMenu />
+        <BurgerMenu onClick={() => setMenuVisible(true)} />
       </div>
       <div className={styles.date}>
         <FloatingDate />

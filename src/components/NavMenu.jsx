@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -12,12 +12,15 @@ const styles = {
     height: 100vh;
     width: 100vw;
     background: ${sv.white};
-    display: flex;
+    display: none;
     z-index: 99999;
     pointer-events: auto;
     overscroll-behavior: none;
     flex-direction: column;
     justify-content: center;
+  `,
+  visible: css`
+    display: flex;
   `,
   item: css`
     position: relative;
@@ -48,7 +51,7 @@ const styles = {
       &::after {
         width: 0;
         opacity: 0;
-        transition: all 1s ${sv.transitionTime} ease-in-out;
+        transition: all 1s ease-in-out;
       }
 
       * {
@@ -61,7 +64,6 @@ const styles = {
     color: ${sv.neutralLight};
     text-align: center;
     text-transform: uppercase;
-    ${'' /* transition: all ${sv.transitionTime} ${sv.transitionTime} ease-in-out; */}
     transition: ${sv.transition};
   `,
   subtitle: css`
@@ -71,7 +73,6 @@ const styles = {
     text-align: center;
     font-size: 3.5em;
     transition: ${sv.transition};
-    ${'' /* transition: all ${sv.transitionTime} ${sv.transitionTime} ease-in-out; */}
   `,
 };
 
@@ -112,7 +113,7 @@ const NavMenu = ({ visible }) => {
   if (!outletElement) return '';
 
   return ReactDOM.createPortal(
-    <div className={styles.menu}>
+    <div className={cx(styles.menu, { [styles.visible]: visible })}>
       <div className={styles.item}>
         <div className={styles.title}>Home</div>
       </div>
