@@ -20,15 +20,49 @@ const styles = {
     justify-content: center;
   `,
   item: css`
+    position: relative;
     width: 100%;
-    padding: ${sv.paddingLarge};
-    margin: calc(${sv.marginLarge}) 0;
+    padding: calc(${sv.paddingLarge} * 2) 0;
+    background: ${sv.backgroundColor};
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100vw;
+      opacity: 1;
+      background: ${sv.white};
+      transition: opacity ${sv.transitionTime} ease-in-out;
+    }
+
+    * {
+      z-index: 999;
+      position: relative;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &::after {
+        width: 0;
+        opacity: 0;
+        transition: all 1s ${sv.transitionTime} ease-in-out;
+      }
+
+      * {
+        color: ${sv.neutral};
+      }
+    }
   `,
   title: css`
     font-size: 2.5em;
     color: ${sv.neutralLight};
     text-align: center;
     text-transform: uppercase;
+    ${'' /* transition: all ${sv.transitionTime} ${sv.transitionTime} ease-in-out; */}
+    transition: ${sv.transition};
   `,
   subtitle: css`
     margin-top: ${sv.margin};
@@ -36,6 +70,8 @@ const styles = {
     color: ${sv.neutralLight};
     text-align: center;
     font-size: 3.5em;
+    transition: ${sv.transition};
+    ${'' /* transition: all ${sv.transitionTime} ${sv.transitionTime} ease-in-out; */}
   `,
 };
 
