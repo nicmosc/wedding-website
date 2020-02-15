@@ -24,6 +24,7 @@ const styles = {
     display: flex;
     align-items: flex-start;
     margin-top: ${sv.marginLarge};
+    padding-bottom: ${sv.paddingLarge};
   `,
   person: css`
     display: flex;
