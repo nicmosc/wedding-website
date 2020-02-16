@@ -90,44 +90,40 @@ const items = [
   },
   {
     q: 'What should I wear?',
-    a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+    a: `Since the wedding will be in the summer, people should be comfortable if it's warm, so smart casual is the dress code. Ties are optional for men, and women can wear a touch of MISSING`,
     icon: hanger,
   },
   {
     q: 'Does your wedding have a theme?',
     a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+      'There is no particular theme, except colors are mostly light, pastel, composed of pink, white and grey. Oh and it will be outside.',
     icon: hat,
   },
   {
     q: 'Where will the ceremony and reception take place?',
     a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+      'Both ceremony and reception will take place at the same venue, the Loonbeek Castle, Sint-Jansbergsteenweg 24-26, 3040 Loonbeek',
     icon: map,
   },
   {
     q: 'If i come by car where can i park?',
-    a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+    a: `We will reserve parking which is right in front of the venue, there should be enough space for everyone, so you don't need to worry.`,
     icon: car,
   },
   {
     q: 'Any hotels you recommend near the venue?',
-    a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+    a: `There are many hotels available in Brussels, which is 20 minutes away from the venue. However there are some hotels near the venue as well. One we recommend is the B&B Baron's House`,
     icon: hotel,
   },
   {
     q: `What's on your registry?`,
-    a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+    a: 'You can find out in the Registry page by following this link: MISSING',
     icon: gift,
   },
   {
     q: `I'm still not sure about some things, who should I contact?`,
     a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+      'For anything before the wedding day, you can contact us directly. During the day, you can ask Aislinn or Geoffrey',
     icon: question,
   },
 ];
