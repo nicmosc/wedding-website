@@ -3,6 +3,7 @@ import React from 'react';
 
 import rightFlower from '../../images/intro-right-flower.png';
 import sv from '../../utils/vars';
+import Link from '../Link';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';
@@ -31,6 +32,10 @@ const styles = {
     font-size: 1em;
     color: ${sv.neutral};
     text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
   `,
   flower: css`
     position: absolute;
@@ -63,9 +68,16 @@ const Footer = () => {
         <Subtitle>For more details follow the links below:</Subtitle>
       </div>
       <div className={styles.links}>
-        <a className={styles.link}>Registry</a>
-        <a className={styles.link}>Faq</a>
-        <a className={styles.link}>Gallery</a>
+        <Link to="/registry">
+          <div className={styles.link}>Registry</div>
+        </Link>
+
+        <Link to="/faq">
+          <div className={styles.link}>faq</div>
+        </Link>
+        <Link to="/gallery">
+          <div className={styles.link}>Gallery</div>
+        </Link>
       </div>
       <div className={styles.flower}>
         <img src={rightFlower} />

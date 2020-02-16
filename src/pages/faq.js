@@ -32,6 +32,7 @@ const styles = {
     left: calc(${sv.marginLarge} * -1);
     z-index: 99;
     height: 60vh;
+    max-width: 50vw;
     display: flex;
     justify-content: flex-start;
     pointer-events: none;

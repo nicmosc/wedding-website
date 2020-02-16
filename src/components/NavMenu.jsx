@@ -1,9 +1,9 @@
 import { css, cx } from 'emotion';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import sv from '../utils/vars';
+import Link from './Link';
 
 const styles = {
   menu: css`
@@ -121,27 +121,27 @@ const NavMenu = ({ visible, onClickClose }) => {
 
   return ReactDOM.createPortal(
     <div className={cx(styles.menu, { [styles.visible]: visible })}>
-      <AniLink duration={2} cover to="/" direction="right" bg={sv.pink}>
+      <Link to="/">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Home</div>
         </div>
-      </AniLink>
-      <AniLink duration={2} cover to="/registry" direction="right" bg={sv.pink}>
+      </Link>
+      <Link to="/registry">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Registry</div>
         </div>
-      </AniLink>
-      <AniLink duration={2} cover to="/faq" direction="right" bg={sv.pink}>
+      </Link>
+      <Link to="/faq">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Faq</div>
         </div>
-      </AniLink>
-      <AniLink duration={2} cover to="/gallery" direction="right" bg={sv.pink}>
+      </Link>
+      <Link to="/gallery">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Gallery</div>
           <div className={styles.subtitle}>Coming soon</div>
         </div>
-      </AniLink>
+      </Link>
     </div>,
     document.getElementById('modals-outlet'),
   );
