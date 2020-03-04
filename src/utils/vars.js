@@ -34,7 +34,9 @@ const paddingLarge = marginLarge;
 
 const transitionTime = '0.2s';
 
-const transition = 'all 0.2s ease-in-out';
+const curve = 'cubic-bezier(1, -0.07, 0.51, 1)';
+
+const transition = `all ${transitionTime} ${curve}`;
 
 export default {
   altFontFamily,
@@ -61,6 +63,7 @@ export default {
   paddingLarge,
   transition,
   transitionTime,
+  curve,
   neutralLighter,
   white,
 };

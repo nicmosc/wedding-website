@@ -8,20 +8,27 @@ import Link from './Link';
 const styles = {
   menu: css`
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
     background: ${sv.white};
-    display: none;
-    z-index: 9;
+    z-index: -99999;
     pointer-events: auto;
     overscroll-behavior: none;
     flex-direction: column;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: transform 1s ${sv.curve};
   `,
   visible: css`
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9;
+    transform: translateX(0);
   `,
   item: css`
     position: relative;
@@ -52,7 +59,7 @@ const styles = {
       &::after {
         width: 0;
         opacity: 0;
-        transition: all 1s ease-in-out;
+        transition: all 1s ${sv.curve};
       }
 
       * {
