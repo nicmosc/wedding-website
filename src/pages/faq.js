@@ -1,7 +1,9 @@
 import { css } from 'emotion';
-import React, { useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import React, { Fragment, useState } from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
+import Link from '../components/Link';
 import NavMenu from '../components/NavMenu';
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
@@ -118,7 +120,8 @@ const items = [
   },
   {
     q: `What's on your registry?`,
-    a: 'You can find out in the Registry page by following this link: MISSING',
+    a: `You can find out in the Registry page by following this link: `,
+    link: true,
     icon: gift,
   },
   {
@@ -131,6 +134,18 @@ const items = [
 
 const FAQ = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            kadologLink
+          }
+        }
+      }
+    `,
+  );
+
   return (
     <div className={styles.pageWrapper}>
       <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
@@ -150,7 +165,20 @@ const FAQ = () => {
                 <img src={item.icon} />
               </div>
             </div>
-            <div className={styles.answer}>{item.a}</div>
+            <div className={styles.answer}>
+              {do {
+                if (item.link) {
+                  <Fragment>
+                    <span>{item.a}</span>
+                    <Link external to={data.site.siteMetadata.kadologLink}>
+                      kadolog.com
+                    </Link>
+                  </Fragment>;
+                } else {
+                  item.a;
+                }
+              }}
+            </div>
           </div>
         ))}
       </div>
