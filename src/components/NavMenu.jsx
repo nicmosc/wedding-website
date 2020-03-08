@@ -1,5 +1,6 @@
 import { css, cx } from 'emotion';
-import React, { useEffect, useRef, useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import sv from '../utils/vars';
@@ -100,6 +101,18 @@ const NavMenu = ({ visible, onClickClose }) => {
   const [outletElement, setOutletElement] = useState(null);
   const [zIndex, setZIndex] = useState(-9999);
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            kadologLink
+          }
+        }
+      }
+    `,
+  );
+
   const handleClickClose = () => {
     setTimeout(() => {
       onClickClose();
@@ -165,7 +178,7 @@ const NavMenu = ({ visible, onClickClose }) => {
           <div className={styles.subtitle}>Coming soon</div>
         </div>
       </Link>
-      <Link to="/registry" external>
+      <Link to={data.site.siteMetadata.kadologLink} external>
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Registry</div>
           <div className={styles.subtitle}>kadolog.com</div>

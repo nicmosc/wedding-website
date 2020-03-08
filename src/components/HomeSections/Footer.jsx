@@ -81,7 +81,7 @@ const Footer = () => {
         <Subtitle>For more details follow the links below:</Subtitle>
       </div>
       <div className={styles.links}>
-        <Link to={data.site.siteMetadata.kadologLink} raw>
+        <Link to={data.site.siteMetadata.kadologLink} external>
           <div className={styles.link}>Registry</div>
         </Link>
 
