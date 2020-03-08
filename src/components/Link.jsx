@@ -12,7 +12,7 @@ const Link = ({ to, children, external }) => {
     );
   }
   return (
-    <AniLink duration={2} cover to={to} direction="right" bg={sv.neutralLight}>
+    <AniLink duration={2} cover to={to} direction="right" bg={sv.green}>
       {children}
     </AniLink>
   );

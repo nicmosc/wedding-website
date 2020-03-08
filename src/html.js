@@ -2,39 +2,42 @@ import { Global, css } from '@emotion/core';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Loader from './components/Loader';
 import merlin from './fonts/merlin.regular.ttf';
 import sv from './utils/vars';
 
-const styles = css`
-  @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap');
+const styles = {
+  global: css`
+    @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap');
 
-  @font-face {
-    font-family: Merlin;
-    font-weight: 400;
-    font-style: normal;
-    src: url(${merlin}) format('truetype');
-  }
+    @font-face {
+      font-family: Merlin;
+      font-weight: 400;
+      font-style: normal;
+      src: url(${merlin}) format('truetype');
+    }
 
-  html,
-  body {
-    background: ${sv.backgroundColor};
-    font-size: ${sv.defaultFontSize};
-    line-height: ${sv.defaultLineHeight};
-    letter-spacing: ${sv.defaultLetterSpacing};
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-  }
+    html,
+    body {
+      background: ${sv.backgroundColor};
+      font-size: ${sv.defaultFontSize};
+      line-height: ${sv.defaultLineHeight};
+      letter-spacing: ${sv.defaultLetterSpacing};
+      -webkit-font-smoothing: antialiased;
+      -webkit-overflow-scrolling: touch;
+    }
 
-  * {
-    font-family: ${sv.defaultFontFamily};
-    font-weight: 500;
-  }
+    * {
+      font-family: ${sv.defaultFontFamily};
+      font-weight: 500;
+    }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  `,
+};
 
 export default function HTML(props) {
   return (
@@ -50,24 +53,10 @@ export default function HTML(props) {
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
-        <div
-          key={`loader`}
-          id="___loader"
-          style={{
-            alignItems: 'center',
-            backgroundColor: '#F2F2F2',
-            display: 'flex',
-            justifyContent: 'center',
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 9999,
-          }}>
-          <h1>Loading...</h1>
+        <div key={`loader`} id="___loader" style={{ pointerEvents: 'none' }}>
+          {/* <Loader /> */}
         </div>
-        <Global styles={styles} />
+        <Global styles={styles.global} />
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
       </body>

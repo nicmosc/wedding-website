@@ -88,7 +88,7 @@ const Footer = () => {
         <Link to="/faq">
           <div className={styles.link}>faq</div>
         </Link>
-        <Link to="/gallery" external>
+        <Link to="/gallery">
           <div className={styles.link}>Gallery</div>
         </Link>
       </div>

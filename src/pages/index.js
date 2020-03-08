@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
 import { DateSection, Footer, Intro, Location, People, Plan } from '../components/HomeSections';
+import Loader from '../components/Loader';
 import NavMenu from '../components/NavMenu';
 import sv from '../utils/vars';
 
@@ -44,6 +45,7 @@ const Index = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   return (
     <div className={styles.pageWrapper}>
+      <Loader />
       <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
       <div className={styles.menu}>
         <BurgerMenu onClick={() => setMenuVisible(true)} />
