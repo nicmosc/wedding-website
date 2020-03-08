@@ -22,7 +22,7 @@ const styles = {
     justify-content: center;
     pointer-events: none;
     transform: translateX(100%);
-    transition: transform 1s ${sv.curve};
+    transition: transform 0.8s ${sv.curve};
   `,
   visible: css`
     opacity: 1;
