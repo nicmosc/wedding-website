@@ -3,7 +3,14 @@ import React from 'react';
 
 import sv from '../utils/vars';
 
-const Link = ({ to, children }) => {
+const Link = ({ to, children, external }) => {
+  if (external) {
+    return (
+      <a href={to} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
+    );
+  }
   return (
     <AniLink duration={2} cover to={to} direction="right" bg={sv.neutralLight}>
       {children}

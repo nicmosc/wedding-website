@@ -1,8 +1,9 @@
 import { css, cx } from 'emotion';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import sv from '../utils/vars';
+import Icon from './Icon';
 import Link from './Link';
 
 const styles = {
@@ -19,7 +20,6 @@ const styles = {
     overscroll-behavior: none;
     flex-direction: column;
     justify-content: center;
-    opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
     transition: transform 1s ${sv.curve};
@@ -27,7 +27,7 @@ const styles = {
   visible: css`
     opacity: 1;
     pointer-events: auto;
-    z-index: 9;
+    z-index: 99;
     transform: translateX(0);
   `,
   item: css`
@@ -82,10 +82,23 @@ const styles = {
     font-size: 3.5em;
     transition: ${sv.transition};
   `,
+  close: css`
+    position: absolute;
+    top: ${sv.marginLarge};
+    right: ${sv.marginLarge};
+    color: ${sv.neutralLight};
+    transition: ${sv.transition};
+
+    &:hover {
+      cursor: pointer;
+      color: ${sv.neutral};
+    }
+  `,
 };
 
 const NavMenu = ({ visible, onClickClose }) => {
   const [outletElement, setOutletElement] = useState(null);
+  const [zIndex, setZIndex] = useState(-9999);
 
   const handleClickClose = () => {
     setTimeout(() => {
@@ -113,6 +126,7 @@ const NavMenu = ({ visible, onClickClose }) => {
   useEffect(() => {
     if (visible) {
       document.body.style.overflow = 'hidden';
+      setZIndex(99);
       // if (screenSize <= ScreenSizes.L) {
       //   document.body.style.pointerEvents = 'none';
       //   document.body.parentElement.style.position = 'fixed';
@@ -121,21 +135,23 @@ const NavMenu = ({ visible, onClickClose }) => {
       document.body.style.overflow = 'initial';
       document.body.style.pointerEvents = 'auto';
       document.body.parentElement.style.position = '';
+
+      setTimeout(() => {
+        setZIndex(-9999);
+      }, 1000);
     }
   }, [visible]);
 
   if (!outletElement) return '';
 
   return ReactDOM.createPortal(
-    <div className={cx(styles.menu, { [styles.visible]: visible })}>
+    <div className={cx(styles.menu, { [styles.visible]: visible })} style={{ zIndex }}>
+      <div className={styles.close} onClick={onClickClose}>
+        <Icon name="x" />
+      </div>
       <Link to="/">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Home</div>
-        </div>
-      </Link>
-      <Link to="/registry">
-        <div onClick={handleClickClose} className={styles.item}>
-          <div className={styles.title}>Registry</div>
         </div>
       </Link>
       <Link to="/faq">
@@ -147,6 +163,12 @@ const NavMenu = ({ visible, onClickClose }) => {
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Gallery</div>
           <div className={styles.subtitle}>Coming soon</div>
+        </div>
+      </Link>
+      <Link to="/registry" external>
+        <div onClick={handleClickClose} className={styles.item}>
+          <div className={styles.title}>Registry</div>
+          <div className={styles.subtitle}>kadolog.com</div>
         </div>
       </Link>
     </div>,

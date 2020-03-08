@@ -1,4 +1,5 @@
 import { css } from 'emotion';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import rightFlower from '../../images/intro-right-flower.png';
@@ -61,6 +62,18 @@ const styles = {
 };
 
 const Footer = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            kadologLink
+          }
+        }
+      }
+    `,
+  );
+
   return (
     <div className={styles.section}>
       <Title>See you there!</Title>
@@ -68,14 +81,14 @@ const Footer = () => {
         <Subtitle>For more details follow the links below:</Subtitle>
       </div>
       <div className={styles.links}>
-        <Link to="/registry">
+        <Link to={data.site.siteMetadata.kadologLink} raw>
           <div className={styles.link}>Registry</div>
         </Link>
 
         <Link to="/faq">
           <div className={styles.link}>faq</div>
         </Link>
-        <Link to="/gallery">
+        <Link to="/gallery" external>
           <div className={styles.link}>Gallery</div>
         </Link>
       </div>
