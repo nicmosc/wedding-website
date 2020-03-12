@@ -7,7 +7,8 @@
 require('normalize.css/normalize.css');
 
 exports.onInitialClientRender = () => {
+  console.log('initial render');
   setTimeout(function() {
     // document.getElementById('___loader').style.display = 'none';
-  }, 2000);
+  }, 5500);
 };

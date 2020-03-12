@@ -48,13 +48,13 @@ export default function HTML(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} id="body">
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
         <div key={`loader`} id="___loader" style={{ pointerEvents: 'none' }}>
-          {/* <Loader /> */}
+          <Loader />
         </div>
         <Global styles={styles.global} />
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />

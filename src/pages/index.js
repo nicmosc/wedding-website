@@ -45,7 +45,6 @@ const Index = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   return (
     <div className={styles.pageWrapper}>
-      <Loader />
       <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
       <div className={styles.menu}>
         <BurgerMenu onClick={() => setMenuVisible(true)} />
