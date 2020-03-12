@@ -1,6 +1,5 @@
 import { css, cx } from 'emotion';
 import React, { useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
 import Vivus from 'vivus';
 
 import { Outline } from '../components/Svgs';
@@ -21,6 +20,10 @@ const styles = {
     height: 100%;
     z-index: 9999;
     background: ${sv.white};
+    transition: background 0s 2s linear;
+  `,
+  noBackground: css`
+    background: none;
   `,
   container: css`
     opacity: 0;
@@ -39,7 +42,7 @@ const styles = {
     > svg {
       width: 200px;
       display: none;
-      transition: opacity 0.7s ${sv.curve};
+      transition: opacity 0.7s 0.5s ${sv.curve};
     }
   `,
   ready: css`
@@ -62,13 +65,7 @@ const styles = {
   `,
 };
 
-const Loader = () => {
-  const _document = typeof document !== `undefined` ? document : null;
-
-  if (!_document) {
-    return null;
-  }
-
+const Loader = ({ onFinish }) => {
   const outlineRef = useRef();
   const [expanded, setExpanded] = useState(false);
   const [ready, setReady] = useState(false);
@@ -79,21 +76,21 @@ const Loader = () => {
       setTimeout(() => {
         document.getElementById('outline-svg').style.display = 'block';
         new Vivus('outline-svg', { animTimingFunction: Vivus.EASE }, () => {
+          setExpanded(true);
           setTimeout(() => {
-            setExpanded(true);
-          }, 500);
+            onFinish();
+          }, 3500);
         });
       }, 1000);
     }
   }, []);
 
-  return ReactDOM.createPortal(
-    <div className={styles.loader}>
+  return (
+    <div className={cx(styles.loader, { [styles.noBackground]: expanded })} id="__loader">
       <div className={cx(styles.container, { [styles.ready]: ready, [styles.expanded]: expanded })}>
         <Outline ref={outlineRef} img={logo} />
       </div>
-    </div>,
-    _document.getElementById('body'),
+    </div>
   );
 };
 

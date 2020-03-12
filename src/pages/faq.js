@@ -7,6 +7,7 @@ import Link from '../components/Link';
 import NavMenu from '../components/NavMenu';
 import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
+import Wrapper from '../components/Wrapper';
 import { car, gift, hanger, hat, hotel, map, plane, question } from '../icons';
 import leftFlower from '../images/intro-left-flower.png';
 import sv from '../utils/vars';
@@ -147,42 +148,44 @@ const FAQ = () => {
   );
 
   return (
-    <div className={styles.pageWrapper}>
-      <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
-      <div className={styles.menu}>
-        <BurgerMenu onClick={() => setMenuVisible(true)} />
-      </div>
-      <div className={styles.leftFlower}>
-        <img src={leftFlower} />
-      </div>
-      <Title>FAQ</Title>
-      <div className={styles.items}>
-        {items.map((item, i) => (
-          <div className={styles.item} key={i}>
-            <div className={styles.question}>
-              <Subtitle>{item.q}</Subtitle>
-              <div data-element="icon" className={styles.icon}>
-                <img src={item.icon} />
+    <Wrapper>
+      <div className={styles.pageWrapper}>
+        <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
+        <div className={styles.menu}>
+          <BurgerMenu onClick={() => setMenuVisible(true)} />
+        </div>
+        <div className={styles.leftFlower}>
+          <img src={leftFlower} />
+        </div>
+        <Title>FAQ</Title>
+        <div className={styles.items}>
+          {items.map((item, i) => (
+            <div className={styles.item} key={i}>
+              <div className={styles.question}>
+                <Subtitle>{item.q}</Subtitle>
+                <div data-element="icon" className={styles.icon}>
+                  <img src={item.icon} />
+                </div>
+              </div>
+              <div className={styles.answer}>
+                {do {
+                  if (item.link) {
+                    <Fragment>
+                      <span>{item.a}</span>
+                      <Link external to={data.site.siteMetadata.kadologLink}>
+                        kadolog.com
+                      </Link>
+                    </Fragment>;
+                  } else {
+                    item.a;
+                  }
+                }}
               </div>
             </div>
-            <div className={styles.answer}>
-              {do {
-                if (item.link) {
-                  <Fragment>
-                    <span>{item.a}</span>
-                    <Link external to={data.site.siteMetadata.kadologLink}>
-                      kadolog.com
-                    </Link>
-                  </Fragment>;
-                } else {
-                  item.a;
-                }
-              }}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

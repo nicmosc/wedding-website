@@ -6,9 +6,12 @@
 
 require('normalize.css/normalize.css');
 
-exports.onInitialClientRender = () => {
-  console.log('initial render');
-  setTimeout(function() {
-    // document.getElementById('___loader').style.display = 'none';
-  }, 5500);
+import React from 'react';
+
+import { GlobalContextProvider } from './src/components/Wrapper';
+
+export const wrapRootElement = ({ element }) => {
+  // props provide same data to Layout as Page element will get
+  // including location, data, etc - you don't need to pass it
+  return <GlobalContextProvider>{element}</GlobalContextProvider>;
 };

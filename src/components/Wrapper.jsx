@@ -1,12 +1,38 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import Loader from './Loader';
 
+const GlobalContext = React.createContext();
+
+export const GlobalContextProvider = ({ children }) => {
+  const [hideLoader, setHideLoader] = useState(false);
+
+  return (
+    <GlobalContext.Provider value={{ hideLoader, setHideLoader }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
+
 const Wrapper = ({ children }) => {
+  const { hideLoader, setHideLoader } = useContext(GlobalContext);
+
+  const handleFinishLoading = () => {
+    if (!hideLoader) {
+      document.getElementById('__loader').style.display = 'none';
+      setHideLoader(true);
+    }
+  };
+
   return (
     <Fragment>
-      {ReactDOM.createPortal(<Loader />, document.getElementById('body'))}
+      {hideLoader
+        ? null
+        : ReactDOM.createPortal(
+            <Loader onFinish={handleFinishLoading} />,
+            document.getElementById('body'),
+          )}
       {children}
     </Fragment>
   );

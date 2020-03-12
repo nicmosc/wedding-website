@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import BurgerMenu from '../components/BurgerMenu';
 import FloatingDate from '../components/FloatingDate';
 import { DateSection, Footer, Intro, Location, People, Plan } from '../components/HomeSections';
-import Loader from '../components/Loader';
 import NavMenu from '../components/NavMenu';
+import Wrapper from '../components/Wrapper';
 import sv from '../utils/vars';
 
 const styles = {
@@ -44,44 +44,46 @@ const ReactFullpage =
 const Index = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   return (
-    <div className={styles.pageWrapper}>
-      <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
-      <div className={styles.menu}>
-        <BurgerMenu onClick={() => setMenuVisible(true)} />
+    <Wrapper>
+      <div className={styles.pageWrapper}>
+        <NavMenu onClickClose={() => setMenuVisible(false)} visible={menuVisible} />
+        <div className={styles.menu}>
+          <BurgerMenu onClick={() => setMenuVisible(true)} />
+        </div>
+        <div className={styles.date}>
+          <FloatingDate />
+        </div>
+        <ReactFullpage
+          scrollingSpeed={1000}
+          easingcss3="ease-in-out"
+          scrollOverflow
+          licenseKey="kqT789K@a0"
+          anchors={anchors}
+          render={() => (
+            <ReactFullpage.Wrapper>
+              <div className="section fp-noscroll">
+                <Intro />
+              </div>
+              <div className="section fp-noscroll">
+                <DateSection />
+              </div>
+              <div className={`section fp-noscroll ${styles.flexSection}`}>
+                <Location />
+              </div>
+              <div className="section fp-noscroll">
+                <Plan />
+              </div>
+              <div className="section">
+                <People />
+              </div>
+              <div className="section fp-auto-height">
+                <Footer />
+              </div>
+            </ReactFullpage.Wrapper>
+          )}
+        />
       </div>
-      <div className={styles.date}>
-        <FloatingDate />
-      </div>
-      <ReactFullpage
-        scrollingSpeed={1000}
-        easingcss3="ease-in-out"
-        scrollOverflow
-        licenseKey="kqT789K@a0"
-        anchors={anchors}
-        render={() => (
-          <ReactFullpage.Wrapper>
-            <div className="section fp-noscroll">
-              <Intro />
-            </div>
-            <div className="section fp-noscroll">
-              <DateSection />
-            </div>
-            <div className={`section fp-noscroll ${styles.flexSection}`}>
-              <Location />
-            </div>
-            <div className="section fp-noscroll">
-              <Plan />
-            </div>
-            <div className="section">
-              <People />
-            </div>
-            <div className="section fp-auto-height">
-              <Footer />
-            </div>
-          </ReactFullpage.Wrapper>
-        )}
-      />
-    </div>
+    </Wrapper>
   );
 };
 

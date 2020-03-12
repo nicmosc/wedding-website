@@ -53,9 +53,9 @@ export default function HTML(props) {
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
-        <div key={`loader`} id="___loader" style={{ pointerEvents: 'none' }}>
+        {/* <div key={`loader`} id="___loader" style={{ pointerEvents: 'none' }}>
           <Loader />
-        </div>
+        </div> */}
         <Global styles={styles.global} />
         <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
         {props.postBodyComponents}
