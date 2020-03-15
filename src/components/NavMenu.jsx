@@ -69,7 +69,7 @@ const styles = {
     }
 
     @media ${sv.screenS} {
-      padding: calc(${sv.padding} * 2) 0;
+      padding: calc(${sv.padding} * 1.5) 0;
     }
   `,
   title: css`
@@ -78,6 +78,10 @@ const styles = {
     text-align: center;
     text-transform: uppercase;
     transition: ${sv.transition};
+
+    @media ${sv.screenS} {
+      font-size: 1.5em;
+    }
   `,
   subtitle: css`
     margin-top: ${sv.margin};
@@ -86,6 +90,10 @@ const styles = {
     text-align: center;
     font-size: 3.5em;
     transition: ${sv.transition};
+
+    @media ${sv.screenS} {
+      font-size: 2.5em;
+    }
   `,
   close: css`
     position: absolute;
@@ -93,6 +101,7 @@ const styles = {
     right: ${sv.marginLarge};
     color: ${sv.neutralLight};
     transition: ${sv.transition};
+    z-index: 9999;
 
     &:hover {
       cursor: pointer;

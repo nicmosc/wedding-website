@@ -21,6 +21,7 @@ const styles = {
 
     @media ${sv.screenS} {
       padding: 0 ${sv.padding};
+      margin-top: calc(${sv.margin} * -1);
       min-height: 100vh;
     }
   `,
@@ -71,7 +72,7 @@ const styles = {
     @media ${sv.screenS} {
       height: 35vh;
       left: calc(${sv.marginSmall} * -2);
-      bottom: calc(${sv.marginSmall} * -2);
+      bottom: 0;
     }
   `,
   toTop: css`

@@ -175,24 +175,23 @@ const People = () => {
         <Person
           background={flowerBackground}
           image={placeholder}
+          title="Aislinn"
+          label="Maid of honor"
+        />
+        <Person
+          background={flowerBackground}
+          image={placeholder}
           title="Geoffrey"
           label="Best man"
         />
         <Person
           background={flowerBackground}
           image={placeholder}
-          title="Aislinn"
-          label="Maid of honor"
-        />
-        <Person background={flowerBackground} image={placeholder} title="Ollie" label="Groomsman" />
-      </div>
-      <div className={styles.row}>
-        <Person
-          background={flowerBackground}
-          image={placeholder}
           title="Nathalie"
           label="Bridesmaid"
         />
+      </div>
+      <div className={styles.row}>
         <Person background={flowerBackground} image={placeholder} title="Gary" label="Groomsman" />
         <Person
           background={flowerBackground}
@@ -200,6 +199,7 @@ const People = () => {
           title="Andrea"
           label="Bridesmaid"
         />
+        <Person background={flowerBackground} image={placeholder} title="Ollie" label="Groomsman" />
       </div>
       <div className={styles.row}>
         <Person

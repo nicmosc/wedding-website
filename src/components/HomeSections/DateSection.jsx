@@ -48,11 +48,11 @@ const styles = {
     margin: 0 ${sv.margin};
   `,
   countdown: css`
-    margin-top: calc(${sv.marginLarge} * 3);
+    margin-top: calc(${sv.marginLarge} * 2);
     position: relative;
 
     @media ${sv.screenS} {
-      margin-top: calc(${sv.marginLarge} * 2);
+      margin-top: ${sv.marginLarge};
     }
   `,
   smallMargin: css`
@@ -67,6 +67,10 @@ const styles = {
   alreadyMarried: css`
     text-align: center;
     margin-bottom: calc(${sv.marginLarge} * 2);
+
+    @media ${sv.screenS} {
+      margin-bottom: ${sv.marginLarge};
+    }
   `,
 };
 
@@ -98,6 +102,10 @@ const DateSection = () => {
           if (alreadyMarried) {
             <div className={styles.alreadyMarried}>
               <Subtitle>Married since</Subtitle>
+            </div>;
+          } else {
+            <div className={styles.alreadyMarried}>
+              <Subtitle>In</Subtitle>
             </div>;
           }
         }}

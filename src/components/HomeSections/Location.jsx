@@ -54,7 +54,12 @@ const styles = {
   `,
   description: css`
     @media ${sv.screenS} {
-      font-size: 0.9em;
+      font-size: 0.8em;
+    }
+  `,
+  title: css`
+    @media ${sv.screenS} {
+      font-size: 0.8em;
     }
   `,
 };
@@ -63,7 +68,9 @@ const Location = () => {
   return (
     <div className={styles.section}>
       <Subtitle>You will spend the day with us at</Subtitle>
-      <Title>Loonbeek Castle</Title>
+      <div className={styles.title}>
+        <Title>Loonbeek Castle</Title>
+      </div>
       <Subtitle style={{ textTransform: 'none' }}>
         <span className={styles.description}>Sint-Jansbergsteenweg 24-26, 3040 Loonbeek</span>
       </Subtitle>

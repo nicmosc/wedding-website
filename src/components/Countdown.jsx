@@ -40,7 +40,7 @@ const styles = {
   `,
 };
 
-const WEDDING_DATE = new Date('2020-07-11 14:00');
+const WEDDING_DATE = new Date('2020-07-11T14:00');
 
 const Item = ({ time, label }) => {
   return (
