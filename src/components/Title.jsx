@@ -16,6 +16,7 @@ const styles = {
     @media ${sv.screenS} {
       font-size: 5em;
       line-height: 0.7em;
+      margin: ${sv.marginSmall} 0;
     }
   `,
 };

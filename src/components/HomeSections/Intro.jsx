@@ -22,6 +22,19 @@ const styles = {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    [data-element='mobile'] {
+      display: none;
+    }
+
+    @media ${sv.screenS} {
+      [data-element='mobile'] {
+        display: block;
+      }
+      [data-element='desktop'] {
+        display: none;
+      }
+    }
   `,
   rightFlower: css`
     position: absolute;
@@ -85,7 +98,16 @@ const Intro = () => {
         <img src={leftFlower} />
       </div>
       <div className={styles.title}>
-        <Title>Jemima & Nicolaos</Title>
+        <div data-element="desktop">
+          <Title>Jemima & Nicolaos</Title>
+        </div>
+        <div data-element="mobile">
+          <Title>
+            Jemima
+            <br />&<br />
+            Nicolaos
+          </Title>
+        </div>
         <Subtitle>Are getting married</Subtitle>
       </div>
       <div className={styles.rightFlower}>

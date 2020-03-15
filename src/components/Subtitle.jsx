@@ -14,6 +14,7 @@ const styles = {
     @media ${sv.screenS} {
       font-size: 0.9em;
       text-align: center;
+      margin: 5px 0;
     }
   `,
   noMargin: css`
