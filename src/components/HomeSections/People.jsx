@@ -3,7 +3,7 @@ import React from 'react';
 
 import flowerBackground from '../../images/flower-background.png';
 import placeholder from '../../images/placeholder.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';
@@ -25,12 +25,53 @@ const styles = {
     align-items: flex-start;
     margin-top: ${sv.marginLarge};
     padding-bottom: ${sv.paddingLarge};
+
+    @media ${sv.screenS} {
+      flex-direction: column;
+      padding-bottom: 0;
+      margin-top: 0;
+      align-items: stretch;
+
+      &:nth-of-type(4) {
+        > div {
+          flex-direction: row;
+          [data-element='container'] {
+            margin-right: ${sv.marginLarge};
+            margin-left: 0;
+          }
+
+          &:nth-of-type(2) {
+            flex-direction: row-reverse;
+            [data-element='container'] {
+              margin-left: ${sv.marginLarge};
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
   `,
   person: css`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 calc(${sv.margin} * 2);
+
+    @media ${sv.screenS} {
+      flex: 1;
+      flex-direction: row;
+      margin: 0;
+      margin-top: ${sv.marginLarge};
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        [data-element='container'] {
+          margin-right: 0;
+          margin-left: ${sv.marginLarge};
+        }
+      }
+    }
   `,
   container: css`
     position: relative;
@@ -59,6 +100,16 @@ const styles = {
         background: transparent;
       }
     }
+
+    @media ${sv.screenS} {
+      height: 130px;
+      width: 130px;
+      margin-right: ${sv.marginLarge};
+
+      > img {
+        width: 100px;
+      }
+    }
   `,
   overlay: css`
     position: absolute;
@@ -69,11 +120,21 @@ const styles = {
     background: white;
     transition: ${sv.transition};
   `,
+  info: css`
+    @media ${sv.screenS} {
+      flex: 1;
+      text-align: center;
+    }
+  `,
   title: css`
     font-family: ${sv.altFontFamily};
     font-size: 4.5em;
     margin-bottom: ${sv.margin};
     margin-top: ${sv.marginLarge};
+
+    @media ${sv.screenS} {
+      font-size: 3.8em;
+    }
   `,
   nextSection: css`
     position: absolute;
@@ -86,12 +147,17 @@ const styles = {
 const Person = ({ image, label, title, background }) => {
   return (
     <div className={styles.person}>
-      <div className={styles.container} style={{ backgroundImage: `url(${background})` }}>
+      <div
+        data-element="container"
+        className={styles.container}
+        style={{ backgroundImage: `url(${background})` }}>
         <div data-element="overlay" className={styles.overlay} />
         <img src={image} />
       </div>
-      <div className={styles.title}>{title}</div>
-      <Subtitle>{label}</Subtitle>
+      <div className={styles.info}>
+        <div className={styles.title}>{title}</div>
+        <Subtitle>{label}</Subtitle>
+      </div>
     </div>
   );
 };
@@ -109,24 +175,23 @@ const People = () => {
         <Person
           background={flowerBackground}
           image={placeholder}
+          title="Aislinn"
+          label="Maid of honor"
+        />
+        <Person
+          background={flowerBackground}
+          image={placeholder}
           title="Geoffrey"
           label="Best man"
         />
         <Person
           background={flowerBackground}
           image={placeholder}
-          title="Aislinn"
-          label="Maid of honor"
-        />
-        <Person background={flowerBackground} image={placeholder} title="Ollie" label="Groomsman" />
-      </div>
-      <div className={styles.row}>
-        <Person
-          background={flowerBackground}
-          image={placeholder}
           title="Nathalie"
           label="Bridesmaid"
         />
+      </div>
+      <div className={styles.row}>
         <Person background={flowerBackground} image={placeholder} title="Gary" label="Groomsman" />
         <Person
           background={flowerBackground}
@@ -134,6 +199,7 @@ const People = () => {
           title="Andrea"
           label="Bridesmaid"
         />
+        <Person background={flowerBackground} image={placeholder} title="Ollie" label="Groomsman" />
       </div>
       <div className={styles.row}>
         <Person

@@ -2,7 +2,7 @@ import { css, cx } from 'emotion';
 import React from 'react';
 
 import flower from '../../images/countdown-flower.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import Countdown from '../Countdown';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
@@ -17,12 +17,19 @@ const styles = {
     position: relative;
     min-height: 100vh;
   `,
+  subtitle: css`
+    margin-bottom: ${sv.marginLarge};
+  `,
   title: css`
     font-size: 3em;
     text-transform: uppercase;
     color: ${sv.neutral};
     font-weight: 300;
-    margin-top: ${sv.marginLarge};
+    margin-top: 0;
+
+    @media ${sv.screenS} {
+      font-size: 2em;
+    }
   `,
   group: css`
     display: flex;
@@ -32,13 +39,21 @@ const styles = {
   `,
   flower: css`
     width: 200px;
+
+    @media ${sv.screenS} {
+      width: 100px;
+    }
   `,
   at: css`
     margin: 0 ${sv.margin};
   `,
   countdown: css`
-    margin-top: calc(${sv.marginLarge} * 3);
+    margin-top: calc(${sv.marginLarge} * 2);
     position: relative;
+
+    @media ${sv.screenS} {
+      margin-top: ${sv.marginLarge};
+    }
   `,
   smallMargin: css`
     margin-top: ${sv.marginLarge};
@@ -52,6 +67,10 @@ const styles = {
   alreadyMarried: css`
     text-align: center;
     margin-bottom: calc(${sv.marginLarge} * 2);
+
+    @media ${sv.screenS} {
+      margin-bottom: ${sv.marginLarge};
+    }
   `,
 };
 
@@ -61,13 +80,15 @@ const DateSection = () => {
   const alreadyMarried = WEDDING_DATE < new Date();
   return (
     <div className={styles.dateSection}>
-      {do {
-        if (alreadyMarried) {
-          <Subtitle>The wedding was held on</Subtitle>;
-        } else {
-          <Subtitle>The wedding will be held on</Subtitle>;
-        }
-      }}
+      <div className={styles.subtitle}>
+        {do {
+          if (alreadyMarried) {
+            <Subtitle>The wedding was held on</Subtitle>;
+          } else {
+            <Subtitle>The wedding will be held on</Subtitle>;
+          }
+        }}
+      </div>
       <div className={styles.title}>July 11, 2020</div>
       <div className={styles.group}>
         <img className={styles.flower} src={flower} />
@@ -81,6 +102,10 @@ const DateSection = () => {
           if (alreadyMarried) {
             <div className={styles.alreadyMarried}>
               <Subtitle>Married since</Subtitle>
+            </div>;
+          } else {
+            <div className={styles.alreadyMarried}>
+              <Subtitle>In</Subtitle>
             </div>;
           }
         }}

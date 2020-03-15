@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import React from 'react';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   title: css`
@@ -11,6 +11,13 @@ const styles = {
     font-weight: 300;
     color: ${sv.neutral};
     margin: ${sv.marginLarge} 0;
+    text-align: center;
+
+    @media ${sv.screenS} {
+      font-size: 5em;
+      line-height: 0.7em;
+      margin: ${sv.marginSmall} 0;
+    }
   `,
 };
 

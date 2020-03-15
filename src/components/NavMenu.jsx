@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
 import Icon from './Icon';
 import Link from './Link';
 
@@ -67,6 +67,10 @@ const styles = {
         color: ${sv.neutral};
       }
     }
+
+    @media ${sv.screenS} {
+      padding: calc(${sv.padding} * 1.5) 0;
+    }
   `,
   title: css`
     font-size: 2.5em;
@@ -74,6 +78,10 @@ const styles = {
     text-align: center;
     text-transform: uppercase;
     transition: ${sv.transition};
+
+    @media ${sv.screenS} {
+      font-size: 1.5em;
+    }
   `,
   subtitle: css`
     margin-top: ${sv.margin};
@@ -82,6 +90,10 @@ const styles = {
     text-align: center;
     font-size: 3.5em;
     transition: ${sv.transition};
+
+    @media ${sv.screenS} {
+      font-size: 2.5em;
+    }
   `,
   close: css`
     position: absolute;
@@ -89,6 +101,7 @@ const styles = {
     right: ${sv.marginLarge};
     color: ${sv.neutralLight};
     transition: ${sv.transition};
+    z-index: 9999;
 
     &:hover {
       cursor: pointer;

@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import React from 'react';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
 import Icon from './Icon';
 
 const styles = {

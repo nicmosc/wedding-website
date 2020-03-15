@@ -4,7 +4,7 @@ import Vivus from 'vivus';
 
 import { Outline } from '../components/Svgs';
 import logo from '../images/logo/logo-short.svg';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   loader: css`
@@ -44,6 +44,15 @@ const styles = {
       display: none;
       transition: opacity 0.7s 0.5s ${sv.curve};
     }
+
+    @media ${sv.screenS} {
+      width: 200px;
+      height: 200px;
+
+      > svg {
+        width: 120px;
+      }
+    }
   `,
   ready: css`
     opacity: 1;
@@ -58,6 +67,11 @@ const styles = {
 
     > svg {
       opacity: 0;
+    }
+
+    @media ${sv.screenS} {
+      height: 1000px;
+      width: 1000px;
     }
   `,
   img: css`

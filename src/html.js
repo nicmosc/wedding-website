@@ -4,7 +4,7 @@ import React from 'react';
 
 import Loader from './components/Loader';
 import merlin from './fonts/merlin.regular.ttf';
-import sv from './utils/vars';
+import { sv } from './utils';
 
 const styles = {
   global: css`

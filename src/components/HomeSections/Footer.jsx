@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import rightFlower from '../../images/intro-right-flower.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import Link from '../Link';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
@@ -18,6 +18,12 @@ const styles = {
     position: relative;
     padding-bottom: 400px;
     padding-top: calc(${sv.paddingLarge} * 4);
+
+    @media ${sv.screenS} {
+      padding: 0 ${sv.padding};
+      margin-top: calc(${sv.margin} * -1);
+      min-height: 100vh;
+    }
   `,
   subtitle: css`
     margin-top: ${sv.marginLarge};
@@ -25,6 +31,12 @@ const styles = {
   links: css`
     display: flex;
     margin-top: ${sv.marginLarge};
+
+    @media ${sv.screenS} {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0;
+    }
   `,
   link: css`
     display: inline-block;
@@ -36,6 +48,10 @@ const styles = {
 
     &:hover {
       cursor: pointer;
+    }
+
+    @media ${sv.screenS} {
+      margin-top: ${sv.margin};
     }
   `,
   flower: css`
@@ -52,12 +68,22 @@ const styles = {
       height: 100%;
       object-fit: contain;
     }
+
+    @media ${sv.screenS} {
+      height: 35vh;
+      left: calc(${sv.marginSmall} * -2);
+      bottom: 0;
+    }
   `,
   toTop: css`
     position: absolute;
     bottom: ${sv.marginLarge};
     right: 20%;
     z-index: 999;
+
+    @media ${sv.screenS} {
+      display: none;
+    }
   `,
   group: css`
     display: flex;

@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import React, { useState } from 'react';
 
 import { useInterval } from '../utils';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   countdown: css`
@@ -22,16 +22,25 @@ const styles = {
     color: ${sv.neutral};
     font-weight: 300;
     margin: 0 ${sv.marginSmall};
+
+    @media ${sv.screenS} {
+      font-size: 2em;
+      margin: 0 5px;
+    }
   `,
   label: css`
     font-size: 3.5em;
     font-family: ${sv.altFontFamily};
     color: ${sv.neutral};
     margin-top: calc(${sv.margin} * 2);
+
+    @media ${sv.screenS} {
+      font-size: 2.2em;
+    }
   `,
 };
 
-const WEDDING_DATE = new Date('2020-07-11 14:00');
+const WEDDING_DATE = new Date('2020-07-11T14:00');
 
 const Item = ({ time, label }) => {
   return (

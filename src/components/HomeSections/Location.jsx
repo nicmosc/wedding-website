@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import React from 'react';
 
 import flower from '../../images/map-flower.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';
@@ -16,12 +16,22 @@ const styles = {
     align-items: center;
     position: relative;
     padding-top: calc(${sv.paddingLarge} * 3);
+
+    @media ${sv.screenS} {
+      padding-right: ${sv.marginSmall};
+      padding-left: ${sv.marginSmall};
+    }
   `,
   map: css`
     height: 40vh;
     width: 100%;
     margin-top: calc(${sv.marginLarge} * 2);
     position: relative;
+
+    @media ${sv.screenS} {
+      margin-top: ${sv.margin};
+      height: 35vh;
+    }
   `,
   nextSection: css`
     position: absolute;
@@ -35,6 +45,22 @@ const styles = {
     right: calc(${sv.marginLarge} * -1);
     width: 400px;
     pointer-events: none;
+
+    @media ${sv.screenS} {
+      width: 150px;
+      top: calc(${sv.margin} * -1);
+      right: calc(${sv.margin} * -1);
+    }
+  `,
+  description: css`
+    @media ${sv.screenS} {
+      font-size: 0.8em;
+    }
+  `,
+  title: css`
+    @media ${sv.screenS} {
+      font-size: 0.8em;
+    }
   `,
 };
 
@@ -42,9 +68,11 @@ const Location = () => {
   return (
     <div className={styles.section}>
       <Subtitle>You will spend the day with us at</Subtitle>
-      <Title>Loonbeek Castle</Title>
+      <div className={styles.title}>
+        <Title>Loonbeek Castle</Title>
+      </div>
       <Subtitle style={{ textTransform: 'none' }}>
-        Sint-Jansbergsteenweg 24-26, 3040 Loonbeek
+        <span className={styles.description}>Sint-Jansbergsteenweg 24-26, 3040 Loonbeek</span>
       </Subtitle>
       <div className={styles.map}>
         <img src={flower} className={styles.flower} />
