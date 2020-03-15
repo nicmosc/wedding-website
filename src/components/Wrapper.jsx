@@ -18,6 +18,10 @@ export const GlobalContextProvider = ({ children }) => {
 const Wrapper = ({ children }) => {
   const { hideLoader, setHideLoader } = useContext(GlobalContext);
 
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
   const handleFinishLoading = () => {
     if (!hideLoader) {
       document.getElementById('__loader').style.display = 'none';
