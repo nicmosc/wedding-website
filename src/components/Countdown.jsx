@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import React, { useState } from 'react';
 
 import { useInterval } from '../utils';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   countdown: css`

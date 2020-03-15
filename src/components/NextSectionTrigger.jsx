@@ -1,7 +1,8 @@
 import { css, keyframes } from 'emotion';
 import React from 'react';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
+import Icon from './Icon';
 import Subtitle from './Subtitle';
 
 const move = keyframes`
@@ -35,6 +36,13 @@ const styles = {
         background: ${sv.neutralLight};
       }
     }
+
+    @media ${sv.screenS} {
+      [data-element='label'],
+      [data-element='line'] {
+        display: none;
+      }
+    }
   `,
   line: css`
     width: 1px;
@@ -43,6 +51,16 @@ const styles = {
     transition: ${sv.transition};
     animation: calc(${sv.transitionTime} * 3) ease-in-out infinite alternate ${move};
   `,
+  icon: css`
+    display: none;
+    transition: ${sv.transition};
+    animation: calc(${sv.transitionTime} * 3) ease-in-out infinite alternate ${move};
+    color: ${sv.neutralLight};
+
+    @media ${sv.screenS} {
+      display: block;
+    }
+  `,
 };
 
 const NextSectionTrigger = ({ children, onClick }) => {
@@ -50,6 +68,9 @@ const NextSectionTrigger = ({ children, onClick }) => {
     <div
       onClick={() => (onClick ? onClick() : window.fullpage_api.moveSectionDown())}
       className={styles.container}>
+      <div className={styles.icon}>
+        <Icon name="arrow-down" />
+      </div>
       <div data-element="line" className={styles.line} />
       <div data-element="label">
         <Subtitle>{children}</Subtitle>

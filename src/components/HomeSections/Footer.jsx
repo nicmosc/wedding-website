@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import rightFlower from '../../images/intro-right-flower.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import Link from '../Link';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';

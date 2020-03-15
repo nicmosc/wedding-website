@@ -4,7 +4,7 @@ import Vivus from 'vivus';
 
 import { Outline } from '../components/Svgs';
 import logo from '../images/logo/logo-short.svg';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   loader: css`

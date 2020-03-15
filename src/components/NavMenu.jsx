@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
 import Icon from './Icon';
 import Link from './Link';
 

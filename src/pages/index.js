@@ -7,7 +7,7 @@ import FloatingDate from '../components/FloatingDate';
 import { DateSection, Footer, Intro, Location, People, Plan } from '../components/HomeSections';
 import NavMenu from '../components/NavMenu';
 import Wrapper from '../components/Wrapper';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   pageWrapper: css`
@@ -26,6 +26,10 @@ const styles = {
     transform-origin: left;
     transform: rotateZ(-90deg) translateY(50%);
     z-index: 9;
+
+    @media ${sv.screenS} {
+      display: none;
+    }
   `,
   flexSection: css`
     .fp-tableCell {

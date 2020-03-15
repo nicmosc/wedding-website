@@ -1,7 +1,7 @@
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import React from 'react';
 
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const Link = ({ to, children, external }) => {
   if (external) {

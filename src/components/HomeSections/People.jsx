@@ -3,7 +3,7 @@ import React from 'react';
 
 import flowerBackground from '../../images/flower-background.png';
 import placeholder from '../../images/placeholder.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';

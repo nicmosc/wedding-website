@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import React from 'react';
 
 import { dance, glasses, heart, rings, truck } from '../../icons';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';

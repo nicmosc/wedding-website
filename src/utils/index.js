@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-export * from './vars';
+import * as vars from './vars';
+
+export const sv = vars;
 
 export function useInterval(callback) {
   const savedCallback = useRef();

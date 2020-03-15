@@ -10,7 +10,7 @@ import Title from '../components/Title';
 import Wrapper from '../components/Wrapper';
 import { car, gift, hanger, hat, hotel, map, plane, question } from '../icons';
 import leftFlower from '../images/intro-left-flower.png';
-import sv from '../utils/vars';
+import { sv } from '../utils';
 
 const styles = {
   pageWrapper: css`

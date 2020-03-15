@@ -2,7 +2,7 @@ import { css } from 'emotion';
 import React from 'react';
 
 import flower from '../../images/map-flower.png';
-import sv from '../../utils/vars';
+import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
 import Title from '../Title';
