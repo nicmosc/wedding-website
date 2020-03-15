@@ -74,7 +74,7 @@ const Index = () => {
               <div className={`section fp-noscroll ${styles.flexSection}`}>
                 <Location />
               </div>
-              <div className="section fp-noscroll">
+              <div className={`section ${window.innerWidth > 375 ? 'fp-noscroll' : ''}`}>
                 <Plan />
               </div>
               <div className="section">

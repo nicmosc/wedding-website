@@ -16,43 +16,91 @@ const styles = {
     align-items: center;
     position: relative;
     min-height: 100vh;
+
+    @media ${sv.screenS} {
+      padding-top: calc(${sv.paddingLarge} * 2);
+      padding-bottom: calc(${sv.paddingLarge} * 4);
+    }
   `,
   timeline: css`
-    margin-top: calc(${sv.marginLarge} * 4);
+    margin-top: ${sv.marginLarge};
     display: flex;
     align-items: flex-start;
     position: relative;
+
+    @media ${sv.screenS} {
+      flex-direction: column;
+      width: calc(100% - ${sv.paddingLarge} * 2);
+    }
   `,
-  verticalLine: css`
+  horizontalLine: css`
     position: absolute;
     top: 130px;
     width: 100%;
     background: ${sv.neutral};
     height: 2px;
+
+    @media ${sv.screenS} {
+      height: 100%;
+      width: 2px;
+      top: 0;
+      left: 50%;
+      transform: translateX(50%);
+    }
   `,
   column: css`
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media ${sv.screenS} {
+      position: relative;
+      flex-direction: row;
+      height: 150px;
+      width: 100%;
+      justify-content: space-between;
+    }
   `,
-  time: css`
-    margin-top: ${sv.margin};
-  `,
+  time: css``,
   iconWrapper: css`
-    height: 50px;
+    height: 70px;
+    display: flex;
   `,
   icon: css`
     width: 70px;
+    flex: 1;
   `,
   line: css`
     width: 2px;
     height: 25px;
     background: ${sv.neutral};
+
+    @media ${sv.screenS} {
+      height: 2px;
+      width: 25px;
+      position: absolute;
+      left: calc(50% + 2px);
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   `,
   label: css`
     max-width: 150px;
     text-align: center;
+
+    @media ${sv.screenS} {
+      width: 35vw;
+    }
+  `,
+  group: css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media ${sv.screenS} {
+      margin-left: ${sv.margin};
+    }
   `,
   nextSection: css`
     position: absolute;
@@ -65,11 +113,13 @@ const styles = {
 const Column = ({ time, label, icon }) => {
   return (
     <div className={styles.column}>
-      <div className={styles.iconWrapper}>
-        <img src={icon} className={styles.icon} />
-      </div>
-      <div className={styles.time}>
-        <Subtitle>{time}</Subtitle>
+      <div className={styles.group}>
+        <div className={styles.iconWrapper}>
+          <img src={icon} className={styles.icon} />
+        </div>
+        <div className={styles.time}>
+          <Subtitle>{time}</Subtitle>
+        </div>
       </div>
       <div className={styles.line} />
       <div className={styles.label}>
@@ -86,7 +136,7 @@ const Plan = () => {
       <Title>Wedding</Title>
       <Subtitle>Day</Subtitle>
       <div className={styles.timeline}>
-        <div className={styles.verticalLine} />
+        <div className={styles.horizontalLine} />
         <Column time="3 PM" label="Ceremony" icon={rings} />
         <Column time="4 PM" label="Drinks & photos" icon={glasses} />
         <Column time="7 PM" label="Dinner" icon={truck} />
