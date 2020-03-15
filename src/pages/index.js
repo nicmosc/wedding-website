@@ -80,7 +80,8 @@ const Index = () => {
               <div className="section">
                 <People />
               </div>
-              <div className="section fp-auto-height">
+              <div
+                className={`section ${window.innerWidth > 375 ? 'fp-auto-height' : 'fp-noscroll'}`}>
                 <Footer />
               </div>
             </ReactFullpage.Wrapper>
