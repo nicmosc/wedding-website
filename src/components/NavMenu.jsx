@@ -67,6 +67,10 @@ const styles = {
         color: ${sv.neutral};
       }
     }
+
+    @media ${sv.screenS} {
+      padding: calc(${sv.padding} * 2) 0;
+    }
   `,
   title: css`
     font-size: 2.5em;
