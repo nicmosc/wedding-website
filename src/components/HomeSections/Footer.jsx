@@ -59,6 +59,19 @@ const styles = {
     right: 20%;
     z-index: 999;
   `,
+  group: css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  `,
+  subsubtitle: css`
+    margin-top: calc(${sv.marginSmall} / 2);
+    color: ${sv.neutralLight};
+    text-align: center;
+    font-size: 0.7em;
+    text-transform: uppercase;
+  `,
 };
 
 const Footer = () => {
@@ -89,7 +102,10 @@ const Footer = () => {
           <div className={styles.link}>faq</div>
         </Link>
         <Link to="/gallery">
-          <div className={styles.link}>Gallery</div>
+          <div className={styles.group}>
+            <div className={styles.link}>Gallery</div>
+            <div className={styles.subsubtitle}>Coming soon</div>
+          </div>
         </Link>
       </div>
       <div className={styles.flower}>

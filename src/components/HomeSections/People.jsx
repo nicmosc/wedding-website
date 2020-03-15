@@ -91,7 +91,7 @@ const Person = ({ image, label, title, background }) => {
         <img src={image} />
       </div>
       <div className={styles.title}>{title}</div>
-      <Subtitle style={{ color: sv.neutral }}>{label}</Subtitle>
+      <Subtitle>{label}</Subtitle>
     </div>
   );
 };
