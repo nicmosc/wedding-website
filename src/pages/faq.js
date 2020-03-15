@@ -22,6 +22,12 @@ const styles = {
     padding-top: calc(${sv.paddingLarge} * 10);
     min-height: 100vh;
     padding-bottom: calc(${sv.paddingLarge} * 2);
+
+    @media ${sv.screenS} {
+      padding-top: calc(${sv.paddingLarge} * 5);
+      padding-left: ${sv.padding};
+      padding-right: ${sv.padding};
+    }
   `,
   menu: css`
     position: fixed;
@@ -44,11 +50,21 @@ const styles = {
       height: 100%;
       object-fit: contain;
     }
+
+    @media ${sv.screenS} {
+      left: calc(${sv.marginLarge} * -1);
+      top: calc(${sv.margin} * -1);
+      height: 30vh;
+    }
   `,
   items: css`
     width: 100%;
     max-width: 1000px;
     margin-top: calc(${sv.marginLarge} * 2);
+
+    @media ${sv.screenS} {
+      margin-top: ${sv.marginLarge};
+    }
   `,
   item: css`
     display: flex;
@@ -68,6 +84,13 @@ const styles = {
     position: relative;
     text-align: center;
     display: inline-block;
+
+    @media ${sv.screenS} {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+    }
   `,
   icon: css`
     display: flex;
@@ -76,12 +99,25 @@ const styles = {
     left: calc(${sv.margin} * -1);
     top: 50%;
     transform: translate(-100%, -50%);
+
+    @media ${sv.screenS} {
+      position: relative;
+      transform: none !important;
+      left: 0;
+      top: 0;
+      margin-bottom: ${sv.marginSmall};
+    }
   `,
   answer: css`
     margin-top: ${sv.margin};
     text-align: center;
     font-size: 0.9em;
     color: ${sv.neutral};
+
+    @media ${sv.screenS} {
+      font-size: 0.8em;
+      line-height: 1.6em;
+    }
   `,
 };
 
