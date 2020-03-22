@@ -8,9 +8,6 @@ import { sv } from '../utils';
 
 const styles = {
   loader: css`
-    align-items: center;
-    display: flex;
-    justify-content: center;
     position: fixed;
     left: 0;
     top: 0;
@@ -27,11 +24,14 @@ const styles = {
   `,
   container: css`
     opacity: 0;
-    transform: scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
+    transform-origin: center;
     width: 350px;
     height: 350px;
     position: relative;
-    border-radius: 1000px;
+    border-radius: 150vw;
+    top: 50%;
+    left: 50%;
     background: ${sv.backgroundColor};
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@ const styles = {
   `,
   ready: css`
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translate(-50%, -50%);
   `,
   expanded: css`
     width: 150vw;

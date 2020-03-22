@@ -86,7 +86,7 @@ const styles = {
 
     @media ${sv.screenS} {
       left: ${sv.marginLarge};
-      bottom: ${sv.marginLarge};
+      bottom: calc(${sv.marginLarge} * 2);
     }
   `,
 };
