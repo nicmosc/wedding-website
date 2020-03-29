@@ -17,7 +17,7 @@ const styles = {
     position: relative;
     min-height: 100vh;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding-top: calc(${sv.paddingLarge} * 2);
       padding-bottom: calc(${sv.paddingLarge} * 4);
     }
@@ -28,7 +28,7 @@ const styles = {
     align-items: flex-start;
     position: relative;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       flex-direction: column;
       width: calc(100% - ${sv.paddingLarge} * 2);
     }
@@ -40,7 +40,7 @@ const styles = {
     background: ${sv.neutral};
     height: 2px;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       height: 100%;
       width: 2px;
       top: 0;
@@ -54,7 +54,7 @@ const styles = {
     flex-direction: column;
     align-items: center;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       position: relative;
       flex-direction: row;
       height: 150px;
@@ -76,7 +76,7 @@ const styles = {
     height: 25px;
     background: ${sv.neutral};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       height: 2px;
       width: 25px;
       position: absolute;
@@ -89,7 +89,7 @@ const styles = {
     max-width: 150px;
     text-align: center;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       width: 35vw;
     }
   `,
@@ -98,7 +98,7 @@ const styles = {
     flex-direction: column;
     align-items: center;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-left: ${sv.margin};
     }
   `,

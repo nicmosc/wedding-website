@@ -37,7 +37,7 @@ const styles = {
       }
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       [data-element='label'],
       [data-element='line'] {
         display: none;
@@ -57,7 +57,7 @@ const styles = {
     animation: calc(${sv.transitionTime} * 3) ease-in-out infinite alternate ${move};
     color: ${sv.neutralLight};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       display: block;
     }
   `,

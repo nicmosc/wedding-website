@@ -19,7 +19,7 @@ const styles = {
     padding-bottom: 400px;
     padding-top: calc(${sv.paddingLarge} * 4);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding: 0 ${sv.padding};
       margin-top: calc(${sv.margin} * -1);
       min-height: 100vh;
@@ -32,7 +32,7 @@ const styles = {
     display: flex;
     margin-top: ${sv.marginLarge};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       flex-direction: column;
       align-items: center;
       margin-top: 0;
@@ -50,7 +50,7 @@ const styles = {
       cursor: pointer;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-top: ${sv.margin};
     }
   `,
@@ -69,7 +69,7 @@ const styles = {
       object-fit: contain;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       height: 35vh;
       left: calc(${sv.marginSmall} * -2);
       bottom: 0;
@@ -81,7 +81,7 @@ const styles = {
     right: 20%;
     z-index: 999;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       display: none;
     }
   `,

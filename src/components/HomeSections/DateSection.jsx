@@ -27,7 +27,7 @@ const styles = {
     font-weight: 300;
     margin-top: 0;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 2em;
     }
   `,
@@ -40,7 +40,7 @@ const styles = {
   flower: css`
     width: 200px;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       width: 100px;
     }
   `,
@@ -51,7 +51,7 @@ const styles = {
     margin-top: calc(${sv.marginLarge} * 2);
     position: relative;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-top: ${sv.marginLarge};
     }
   `,
@@ -68,7 +68,7 @@ const styles = {
     text-align: center;
     margin-bottom: calc(${sv.marginLarge} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-bottom: ${sv.marginLarge};
     }
   `,

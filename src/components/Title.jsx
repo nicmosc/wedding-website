@@ -13,7 +13,7 @@ const styles = {
     margin: ${sv.marginLarge} 0;
     text-align: center;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 5em;
       line-height: 0.7em;
       margin: ${sv.marginSmall} 0;

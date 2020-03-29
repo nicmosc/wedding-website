@@ -23,7 +23,7 @@ const styles = {
     font-weight: 300;
     margin: 0 ${sv.marginSmall};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 2em;
       margin: 0 5px;
     }
@@ -34,7 +34,7 @@ const styles = {
     color: ${sv.neutral};
     margin-top: calc(${sv.margin} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 2.2em;
     }
   `,

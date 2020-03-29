@@ -17,7 +17,7 @@ const styles = {
     position: relative;
     padding-top: calc(${sv.paddingLarge} * 3);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding-right: ${sv.marginSmall};
       padding-left: ${sv.marginSmall};
     }
@@ -28,7 +28,7 @@ const styles = {
     margin-top: calc(${sv.marginLarge} * 2);
     position: relative;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-top: ${sv.margin};
       height: 35vh;
     }
@@ -46,19 +46,19 @@ const styles = {
     width: 400px;
     pointer-events: none;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       width: 150px;
       top: calc(${sv.margin} * -1);
       right: calc(${sv.margin} * -1);
     }
   `,
   description: css`
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 0.8em;
     }
   `,
   title: css`
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 0.8em;
     }
   `,

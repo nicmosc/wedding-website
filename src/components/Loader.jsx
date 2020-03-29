@@ -45,7 +45,7 @@ const styles = {
       transition: opacity 0.7s 0.5s ${sv.curve};
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       width: 200px;
       height: 200px;
 
@@ -69,7 +69,7 @@ const styles = {
       opacity: 0;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       height: 1000px;
       width: 1000px;
     }

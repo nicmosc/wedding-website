@@ -20,7 +20,7 @@ const styles = {
     min-height: 100vh;
     padding-bottom: calc(${sv.paddingLarge} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding-top: calc(${sv.paddingLarge} * 5);
       padding-left: ${sv.padding};
       padding-right: ${sv.padding};
@@ -48,7 +48,7 @@ const styles = {
       object-fit: contain;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       left: calc(${sv.marginLarge} * -1);
       top: calc(${sv.margin} * -1);
       height: 30vh;

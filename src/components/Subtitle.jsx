@@ -11,7 +11,7 @@ const styles = {
     text-transform: uppercase;
     margin: ${sv.marginSmall} 0;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 0.9em;
       text-align: center;
       margin: 5px 0;

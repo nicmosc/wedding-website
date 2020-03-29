@@ -27,7 +27,7 @@ const styles = {
     transform: rotateZ(-90deg) translateY(50%);
     z-index: 9;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       display: none;
     }
   `,

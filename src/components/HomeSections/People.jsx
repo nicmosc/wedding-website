@@ -26,7 +26,7 @@ const styles = {
     margin-top: ${sv.marginLarge};
     padding-bottom: ${sv.paddingLarge};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       flex-direction: column;
       padding-bottom: 0;
       margin-top: 0;
@@ -57,7 +57,7 @@ const styles = {
     align-items: center;
     margin: 0 calc(${sv.margin} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       flex: 1;
       flex-direction: row;
       margin: 0;
@@ -101,7 +101,7 @@ const styles = {
       }
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       height: 130px;
       width: 130px;
       margin-right: ${sv.marginLarge};
@@ -121,7 +121,7 @@ const styles = {
     transition: ${sv.transition};
   `,
   info: css`
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       flex: 1;
       text-align: center;
     }
@@ -132,7 +132,7 @@ const styles = {
     margin-bottom: ${sv.margin};
     margin-top: ${sv.marginLarge};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 3.8em;
     }
   `,

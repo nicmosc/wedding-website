@@ -27,7 +27,7 @@ const styles = {
       display: none;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       [data-element='mobile'] {
         display: block;
       }
@@ -52,7 +52,7 @@ const styles = {
       transform: scaleX(-1);
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       right: calc(${sv.marginLarge} * -1);
       height: 35vh;
     }
@@ -72,7 +72,7 @@ const styles = {
       object-fit: contain;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       left: calc(${sv.marginLarge} * -1);
       top: calc(${sv.margin} * -1);
       height: 30vh;
@@ -84,7 +84,7 @@ const styles = {
     left: 20%;
     z-index: 999;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       left: ${sv.marginLarge};
       bottom: calc(${sv.marginLarge} * 2);
     }

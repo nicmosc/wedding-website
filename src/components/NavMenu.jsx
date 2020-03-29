@@ -68,7 +68,7 @@ const styles = {
       }
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding: calc(${sv.padding} * 1.5) 0;
     }
   `,
@@ -79,7 +79,7 @@ const styles = {
     text-transform: uppercase;
     transition: ${sv.transition};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 1.5em;
     }
   `,
@@ -91,7 +91,7 @@ const styles = {
     font-size: 3.5em;
     transition: ${sv.transition};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 2.5em;
     }
   `,
@@ -153,7 +153,7 @@ const NavMenu = ({ visible, onClickClose }) => {
     if (visible) {
       document.body.style.overflow = 'hidden';
       setZIndex(99);
-      // if (screenSize <= ScreenSizes.L) {
+      // if (screenMize <= ScreenSizes.L) {
       //   document.body.style.pointerEvents = 'none';
       //   document.body.parentElement.style.position = 'fixed';
       // }

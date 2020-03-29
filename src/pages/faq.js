@@ -23,7 +23,7 @@ const styles = {
     min-height: 100vh;
     padding-bottom: calc(${sv.paddingLarge} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       padding-top: calc(${sv.paddingLarge} * 5);
       padding-left: ${sv.padding};
       padding-right: ${sv.padding};
@@ -51,7 +51,7 @@ const styles = {
       object-fit: contain;
     }
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       left: calc(${sv.marginLarge} * -1);
       top: calc(${sv.margin} * -1);
       height: 30vh;
@@ -62,7 +62,7 @@ const styles = {
     max-width: 1000px;
     margin-top: calc(${sv.marginLarge} * 2);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       margin-top: ${sv.marginLarge};
     }
   `,
@@ -85,7 +85,7 @@ const styles = {
     text-align: center;
     display: inline-block;
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
@@ -100,7 +100,7 @@ const styles = {
     top: 50%;
     transform: translate(-100%, -50%);
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       position: relative;
       transform: none !important;
       left: 0;
@@ -114,7 +114,7 @@ const styles = {
     font-size: 0.9em;
     color: ${sv.neutral};
 
-    @media ${sv.screenS} {
+    @media ${sv.screenM} {
       font-size: 0.8em;
       line-height: 1.6em;
     }
