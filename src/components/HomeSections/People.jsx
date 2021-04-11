@@ -131,6 +131,7 @@ const styles = {
     font-size: 4.5em;
     margin-bottom: ${sv.margin};
     margin-top: ${sv.marginLarge};
+    text-align: center;
 
     @media ${sv.screenM} {
       font-size: 3.8em;
@@ -156,7 +157,7 @@ const Person = ({ image, label, title, background }) => {
       </div>
       <div className={styles.info}>
         <div className={styles.title}>{title}</div>
-        <Subtitle>{label}</Subtitle>
+        <Subtitle style={{ textAlign: 'center' }}>{label}</Subtitle>
       </div>
     </div>
   );

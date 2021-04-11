@@ -15,6 +15,7 @@ const styles = {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    min-width: 140px;
   `,
   bigLabel: css`
     font-size: 5em;
@@ -40,7 +41,7 @@ const styles = {
   `,
 };
 
-const WEDDING_DATE = new Date('2020-07-11T14:00');
+const WEDDING_DATE = new Date('2021-07-24T15:00');
 
 const Item = ({ time, label }) => {
   return (

@@ -140,7 +140,7 @@ const Plan = () => {
         <Column time="3 PM" label="Ceremony" icon={rings} />
         <Column time="4 PM" label="Drinks & photos" icon={glasses} />
         <Column time="7 PM" label="Dinner" icon={truck} />
-        <Column time="9 PM" label="First dance & party" icon={dance} />
+        <Column time="9 PM" label="Dance & party" icon={dance} />
         <Column time="Forever" label="Happy times" icon={heart} />
       </div>
       <div className={styles.nextSection}>
