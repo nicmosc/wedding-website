@@ -2,7 +2,16 @@ import { css } from 'emotion';
 import React from 'react';
 
 import flowerBackground from '../../images/flower-background.png';
-import placeholder from '../../images/placeholder.png';
+import amina from '../../images/people/amina.png';
+import andrea from '../../images/people/andrea.png';
+import gary from '../../images/people/gary.png';
+import jeff from '../../images/people/jeff.png';
+import jem from '../../images/people/jem.png';
+import ling from '../../images/people/ling.png';
+import nath from '../../images/people/nath.png';
+import nic from '../../images/people/nic.png';
+import ollie from '../../images/people/ollie.png';
+import praj from '../../images/people/praj.png';
 import { sv } from '../../utils';
 import NextSectionTrigger from '../NextSectionTrigger';
 import Subtitle from '../Subtitle';
@@ -87,7 +96,7 @@ const styles = {
     transition: ${sv.transition};
 
     > img {
-      width: 180px;
+      width: 250px;
       transform: translateY(10px);
     }
 
@@ -145,15 +154,16 @@ const styles = {
   `,
 };
 
-const Person = ({ image, label, title, background }) => {
+const Person = ({ image, label, title, background, style }) => {
   return (
     <div className={styles.person}>
       <div
         data-element="container"
         className={styles.container}
-        style={{ backgroundImage: `url(${background})` }}>
+        // style={{ backgroundImage: `url(${background})` }}>
+        style={{ backgroundColor: sv.pink }}>
         <div data-element="overlay" className={styles.overlay} />
-        <img src={image} />
+        <img style={style} src={image} />
       </div>
       <div className={styles.info}>
         <div className={styles.title}>{title}</div>
@@ -169,47 +179,70 @@ const People = () => {
       <Subtitle>The wedding</Subtitle>
       <Title>Party</Title>
       <div className={styles.row}>
-        <Person background={flowerBackground} image={placeholder} title="Jemima" label="Bride" />
-        <Person background={flowerBackground} image={placeholder} title="Nicolaos" label="Groom" />
+        <Person
+          background={flowerBackground}
+          image={jem}
+          title="Jemima"
+          label="Bride"
+          style={{ transform: 'translateY(15px)' }}
+        />
+        <Person
+          background={flowerBackground}
+          image={nic}
+          title="Nicolaos"
+          label="Groom"
+          style={{ transform: 'translateY(8px)' }}
+        />
       </div>
       <div className={styles.row}>
         <Person
           background={flowerBackground}
-          image={placeholder}
+          image={ling}
           title="Aislinn"
           label="Maid of honor"
+          style={{ transform: 'translateY(20px)' }}
         />
         <Person
           background={flowerBackground}
-          image={placeholder}
+          image={jeff}
           title="Geoffrey"
           label="Best man"
+          style={{ transform: 'translateY(10px)' }}
         />
-        <Person
-          background={flowerBackground}
-          image={placeholder}
-          title="Nathalie"
-          label="Bridesmaid"
-        />
+        <Person background={flowerBackground} image={nath} title="Nathalie" label="Bridesmaid" />
       </div>
       <div className={styles.row}>
-        <Person background={flowerBackground} image={placeholder} title="Gary" label="Groomsman" />
         <Person
           background={flowerBackground}
-          image={placeholder}
+          image={gary}
+          title="Gary"
+          label="Groomsman"
+          style={{ transform: 'translateY(12px)' }}
+        />
+        <Person
+          background={flowerBackground}
+          image={andrea}
           title="Andrea"
           label="Bridesmaid"
+          style={{ transform: 'translateY(13px)' }}
         />
-        <Person background={flowerBackground} image={placeholder} title="Ollie" label="Groomsman" />
+        <Person
+          background={flowerBackground}
+          image={ollie}
+          title="Ollie"
+          label="Groomsman"
+          style={{ transform: 'translateY(4px)' }}
+        />
       </div>
       <div className={styles.row}>
         <Person
           background={flowerBackground}
-          image={placeholder}
+          image={amina}
           title="Amina"
           label="Bridesmaid"
+          style={{ transform: 'translateY(8px)' }}
         />
-        <Person background={flowerBackground} image={placeholder} title="Praj" label="Groomsman" />
+        <Person background={flowerBackground} image={praj} title="Praj" label="Groomsman" />
       </div>
       <div className={styles.nextSection}>
         <NextSectionTrigger>Anything else?</NextSectionTrigger>

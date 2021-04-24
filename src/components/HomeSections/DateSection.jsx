@@ -74,7 +74,7 @@ const styles = {
   `,
 };
 
-const WEDDING_DATE = new Date('2021-07-24');
+const WEDDING_DATE = new Date('2021-07-24T14:30');
 
 const DateSection = () => {
   const alreadyMarried = WEDDING_DATE < new Date();
@@ -95,7 +95,7 @@ const DateSection = () => {
         <div className={styles.at}>
           <Subtitle>At</Subtitle>
         </div>
-        <div className={styles.title}>3 PM</div>
+        <div className={styles.title}>2:30 PM</div>
       </div>
       <div className={cx(styles.countdown, { [styles.smallMargin]: alreadyMarried })}>
         {do {
