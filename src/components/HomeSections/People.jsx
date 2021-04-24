@@ -116,7 +116,7 @@ const styles = {
       margin-right: ${sv.marginLarge};
 
       > img {
-        width: 100px;
+        width: 130px;
       }
     }
   `,

@@ -16,6 +16,10 @@ const styles = {
     justify-content: center;
     flex-direction: column;
     min-width: 140px;
+
+    @media ${sv.screenM} {
+      min-width: 60px;
+    }
   `,
   bigLabel: css`
     font-size: 5em;
