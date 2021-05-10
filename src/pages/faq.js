@@ -125,34 +125,34 @@ const items = [
   {
     q: 'When should I arrive in Brussels?',
     a:
-      'You can arrive the morning of the wedding, just keep in mind that it takes around 1h to get from Zaventem Airport to the venue!',
+      'From Zaventem airport, it’s about a 30 minute drive to the venue. However, it’s up to you to decide when you want to arrive. We suggest arriving the day before or the morning of the wedding. You can also take a few days and visit Brussels and Leuven which are very close to each other.',
     icon: plane,
   },
   {
     q: 'What should I wear?',
-    a: `Since the wedding will be in the summer, people should be comfortable if it's warm, so smart casual is the dress code. Ties are optional for men, and women can wear a touch of MISSING`,
+    a: `The wedding is taking place during the summer, and we are hoping for warm weather. The dress code is Smart Casual, and ties are optional for men. We will have heel stoppers available for anyone wearing heels, so that you don’t sink into the grass.`,
     icon: hanger,
   },
   {
     q: 'Does your wedding have a theme?',
     a:
-      'There is no particular theme, except colors are mostly light, pastel, composed of pink, white and grey. Oh and it will be outside.',
+      'There is no particular theme, however you can get inspired by our wedding invitations and our website. A lot of nature colours, light colours, pastels...',
     icon: hat,
   },
   {
     q: 'Where will the ceremony and reception take place?',
     a:
-      'Both ceremony and reception will take place at the same venue, the Loonbeek Castle, Sint-Jansbergsteenweg 24-26, 3040 Loonbeek',
+      'Both the ceremony and the reception will take place at the same venue, the Loonbeek Estate. The address is: Sint-Jansbergsteenweg 24, 3040 Loonbeek. The ceremony will begin at half past two.',
     icon: map,
   },
   {
     q: 'If i come by car where can i park?',
-    a: `We will reserve parking which is right in front of the venue, there should be enough space for everyone, so you don't need to worry.`,
+    a: `We have reserved a parking right across from the venue, there should be enough space for everyone.`,
     icon: car,
   },
   {
-    q: 'Any hotels you recommend near the venue?',
-    a: `There are many hotels available in Brussels, which is 20 minutes away from the venue. However there are some hotels near the venue as well. One we recommend is the B&B Baron's House`,
+    q: 'Where is the closest place to stay overnight?',
+    a: `There are many hotels, AirBnb & B&B near the area or in Brussels. Brussels is about 20-30 minutes drive from the venue. However Leuven is just as close and both cities are accessible by public transport.`,
     icon: hotel,
   },
   {
@@ -164,8 +164,15 @@ const items = [
   {
     q: `I'm still not sure about some things, who should I contact?`,
     a:
-      'For anything before the wedding day, you can contact us directly. During the day, you can ask Aislinn or Geoffrey',
+      'You can contact either of us until before the wedding day. During the day, you can ask Geoffrey (Best man), Aislinn (Maid of Honour) or Elodie (Coordinator) if you have any questions.',
     icon: question,
+  },
+  {
+    q: `What are your plans for COVID-19?`,
+    a: `For the moment, we continue to plan the day hoping for the best. However, closer to the date we will know what the security measures are for weddings. We will have masks available for anyone who feels more comfortable wearing one (it’s not obligatory at the moment). There will also be hand sanitiser available through out the day. The wedding will be outside, with plenty of fresh air, not in an enclosed space inside.
+      
+      We will post more information here as the situation evolves and rules change.`,
+    // icon: question,
   },
 ];
 
