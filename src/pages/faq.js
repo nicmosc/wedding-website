@@ -142,7 +142,7 @@ const items = [
   {
     q: 'Where will the ceremony and reception take place?',
     a:
-      'Both the ceremony and the reception will take place at the same venue, the Loonbeek Estate. The address is: Sint-Jansbergsteenweg 24, 3040 Loonbeek. The ceremony will begin at 3pm.',
+      'Both the ceremony and the reception will take place at the same venue, the Loonbeek Estate. The address is: Sint-Jansbergsteenweg 24, 3040 Loonbeek. The ceremony will begin at 3pm, but you can arrive at half past two.',
     icon: map,
   },
   {
