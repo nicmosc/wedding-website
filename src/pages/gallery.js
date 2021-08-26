@@ -1,9 +1,11 @@
 import { css } from 'emotion';
-// import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 
 import BurgerMenu from '../components/BurgerMenu';
+import Link from '../components/Link';
 import NavMenu from '../components/NavMenu';
+import Subtitle from '../components/Subtitle';
 import Title from '../components/Title';
 import Wrapper from '../components/Wrapper';
 import leftFlower from '../images/intro-left-flower.png';
@@ -57,6 +59,21 @@ const styles = {
 };
 
 const Gallery = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            pictime1
+            pictime2
+            pictime3
+            video
+          }
+        }
+      }
+    `,
+  );
+
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
@@ -70,6 +87,32 @@ const Gallery = () => {
           <img src={leftFlower} />
         </div>
         <Title>Gallery</Title>
+        <Subtitle>Wedding video</Subtitle>
+        <div style={{ marginTop: sv.marginSmall }} />
+        <Link to={data.site.siteMetadata.video} external>
+          Ceremony and Party (2021)
+        </Link>
+        <div style={{ marginTop: sv.marginLarge }} />
+        <Subtitle>Wedding photos</Subtitle>
+        <div style={{ marginTop: sv.marginSmall }} />
+        <Link to={data.site.siteMetadata.pictime1} external>
+          Ceremony and Party (2021)
+        </Link>
+        {/* <div style={{ marginTop: sv.marginLarge }} />
+        <Link to={data.site.siteMetadata.pictime2} external>
+          Engagement photos (2021)
+        </Link> */}
+        <div style={{ marginTop: sv.marginLarge }} />
+        <Link to={data.site.siteMetadata.pictime3} external>
+          Civil wedding and Reception (2020)
+        </Link>
+        <div style={{ marginTop: sv.marginLarge }} />
+        <Subtitle>Access</Subtitle>
+        <span style={{ fontSize: '0.8em' }}>
+          Username: jemima_tallulah_nolan@hotmail.com
+          <br />
+          Password: nicfoundajem
+        </span>
       </div>
     </Wrapper>
   );

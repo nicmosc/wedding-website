@@ -123,15 +123,11 @@ const Footer = () => {
         <Link to={data.site.siteMetadata.kadologLink} external>
           <div className={styles.link}>Registry</div>
         </Link>
-
         <Link to="/faq">
           <div className={styles.link}>faq</div>
         </Link>
         <Link to="/gallery">
-          <div className={styles.group}>
-            <div className={styles.link}>Gallery</div>
-            <div className={styles.subsubtitle}>Coming soon</div>
-          </div>
+          <div className={styles.link}>Gallery</div>
         </Link>
       </div>
       <div className={styles.flower}>

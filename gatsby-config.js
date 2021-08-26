@@ -4,6 +4,10 @@ module.exports = {
     description: `Wedding website for the wedding of Nicolaos and Jemima`,
     author: `@nicmosc`,
     kadologLink: `https://www.kadolog.com/fr/list/liste-de-mariage-de-nicolaos-jemima`,
+    pictime1: `https://charliebillie.pic-time.com/-jemimanicolaos6/gallery`,
+    pictime2: `https://charliebillie.pic-time.com/-jemimanicolaos/gallery`,
+    pictime3: `https://charliebillie.pic-time.com/-jemimanicolao/gallery`,
+    video: `https://youtu.be/h6NLQYojYOE`,
   },
   pathPrefix: '/wedding-website',
   plugins: [

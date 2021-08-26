@@ -69,7 +69,7 @@ const Location = () => {
     <div className={styles.section}>
       <Subtitle>You will spend the day with us at</Subtitle>
       <div className={styles.title}>
-        <Title>Loonbeek Castle</Title>
+        <Title>Loonbeek Estate</Title>
       </div>
       <Subtitle style={{ textTransform: 'none' }}>
         <span className={styles.description}>Sint-Jansbergsteenweg 24-26, 3040 Loonbeek</span>

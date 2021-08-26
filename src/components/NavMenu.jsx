@@ -188,7 +188,6 @@ const NavMenu = ({ visible, onClickClose }) => {
       <Link to="/gallery">
         <div onClick={handleClickClose} className={styles.item}>
           <div className={styles.title}>Gallery</div>
-          <div className={styles.subtitle}>Coming soon</div>
         </div>
       </Link>
       <Link to={data.site.siteMetadata.kadologLink} external>
