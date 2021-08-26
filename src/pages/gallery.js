@@ -98,6 +98,10 @@ const Gallery = () => {
         <Link to={data.site.siteMetadata.pictime1} external>
           Ceremony and Party (2021)
         </Link>
+        <div style={{ marginTop: sv.marginSmall }} />
+        <Link to={data.site.siteMetadata.cheesebox} external>
+          Photobooth (2021)
+        </Link>
         {/* <div style={{ marginTop: sv.marginLarge }} />
         <Link to={data.site.siteMetadata.pictime2} external>
           Engagement photos (2021)
@@ -112,6 +116,8 @@ const Gallery = () => {
           Username: jemima_tallulah_nolan@hotmail.com
           <br />
           Password: nicfoundajem
+          <br />
+          Photobooth password: 202107JENI
         </span>
       </div>
     </Wrapper>

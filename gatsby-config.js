@@ -8,6 +8,7 @@ module.exports = {
     pictime2: `https://charliebillie.pic-time.com/-jemimanicolaos/gallery`,
     pictime3: `https://charliebillie.pic-time.com/-jemimanicolao/gallery`,
     video: `https://youtu.be/h6NLQYojYOE`,
+    cheesebox: `https://cheeesebox.smugmug.com/20210725-Jemima-et-Nicolaos`,
   },
   pathPrefix: '/wedding-website',
   plugins: [
