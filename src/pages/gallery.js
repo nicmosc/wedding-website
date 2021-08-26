@@ -98,8 +98,8 @@ const Gallery = () => {
         <Link to={data.site.siteMetadata.pictime1} external>
           Ceremony and Party (2021)
         </Link>
-        <div style={{ marginTop: sv.marginSmall }} />
-        <Link to={data.site.siteMetadata.cheesebox} external>
+        <div style={{ marginTop: sv.marginLarge }} />
+        <Link to="https://cheeesebox.smugmug.com/20210725-Jemima-et-Nicolaos" external>
           Photobooth (2021)
         </Link>
         {/* <div style={{ marginTop: sv.marginLarge }} />
